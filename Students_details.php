@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="ait.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon"/>
   <link rel="stylesheet" type="text/css" href="Styles.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
     </div>
     <div class="col-sm-4 text-right headerTxt">
         
-             <h4 class="h4txt" > Powered by pineapple solutions ©
+             <h4 class="h4txt" > Powered by <b>Pineapple</b> Solutions ©
             
             <img class="img14"src="./images/Pineapple_Solutions_logo.svg" alt="aitlogo">
             </h4>

@@ -31,14 +31,15 @@
     }
 .headerTxt{
     color: white;
-    margin-top: 20px;
+    margin-top: 0px;
     
 }
 .h4txt{
-    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
 }
 .svgfilter{
-    height: 50px;
+    height: 40px;
 }
 .svgpos{
     padding-top: 10px;
@@ -57,12 +58,17 @@
     background-color: grey;
     width: 100%;
 }
+/*header
+*/
 .headingTxt{
-    font-size: 25px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    padding: 0;
 }
 .li1{
     width: 10%;
-     display: inline;
+    display: inline;
     background-color: pink;
 }
 .img12{
@@ -70,22 +76,26 @@
     height: 40px;
    background-color: grey;
 }
+/*logo AIT
+*/
 .img13{
     width: 100%;
-    max-height: 100px;
+    max-height: 70px;
+    margin-top:10px;
 }
 .img14{
     width: 20%;
-    max-height: 35px;
+    max-height: 20px;
     }
 .navbar{
     background-color: #000000;
     margin: 0px;
     border: none;
     color: white;
+    font-size: 12px;
 }
 .active12{
-    background-color:#00aab0;
+    background-color:#00a9b0;
     
 }
 .ac{
@@ -115,16 +125,24 @@
     padding-top: 5px;
     padding-left: 10px;
 }
-.well1{min-height:20px;  padding:5px;margin-bottom:20px; text-align:left; background-color:orange; border-radius:10px;color: white;
-
-
-
+.well1{
+    min-height:20px;
+    padding:5px;
+    margin-bottom:20px;
+    text-align:left;
+    background-color:orange;
+    border-radius:10px;
+    color: white;
 }
 
-.well2{min-height:20px;  padding:5px;margin-bottom:20px; text-align:left; background-color:white; border-radius:10px;color: grey;
-
-
-
+.well2{
+    min-height:20px;
+    padding:5px;
+    margin-bottom:20px;
+    text-align:left;
+    background-color:white;
+    border-radius:10px;
+    color: grey;
 }
 .colhead{ text-align: center;
   
@@ -135,17 +153,14 @@
     background-color: white;
 }
 
-.well2:hover{ background-color:grey; color:white;
-
-
-
+.well2:hover{
+    background-color:grey;
+    color:white;
 }
 .rowhead{
     
     
 }
-
-
 .t1:hover{
     color: white;
 }
@@ -154,7 +169,7 @@
     margin-top: 10px;
 }
 .li12:hover{
- background-color: grey;
+ background-color: #003438;
     width: 20%;
 }
 .sidenav{
@@ -182,13 +197,52 @@
     text-decoration: none;
 }
 
-.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover{color:pink;background-color:transparent}}.navbar-inverse .navbar-toggle{border-color:#333}
+.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover{
+    color:pink;
+    background-color:transparent;
+}
+.navbar-inverse .navbar-toggle{
+    border-color:#333
+}
 
+.jumbotron{
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+    color:white;
+    background-color:#02C8CF;
+}
+.jumbotron .h1,.jumbotron h1{
+    color:inherit
+}
+.jumbotron p{
+    margin-bottom:5px;
+    font-size:21px;
+    font-weight:200
+}
+.jumbotron>hr{
+    border-top-color:#d5d5d5
+}
+.container .jumbotron,.container-fluid .jumbotron{
+    padding-right:0px;
+    padding-left:0px;
+    border-radius:6px
+}
+.jumbotron .container{
+        max-width:100%
+    }
 
-
-
-
-.jumbotron{padding-top:10px;padding-bottom:10px; margin-bottom:0px;color:white;background-color:#00aab0}
-.jumbotron .h1,.jumbotron h1{color:inherit}
-.jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}
-.jumbotron>hr{border-top-color:#d5d5d5}.container .jumbotron,.container-fluid .jumbotron{padding-right:15px;padding-left:15px;border-radius:6px}.jumbotron .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:10px;padding-bottom:10px}.container .jumbotron,.container-fluid .jumbotron{padding-right:60px;padding-left:60px}.jumbotron .h1,.jumbotron h1{font-size:63px}}
+@media screen and (min-width:768px){
+    .jumbotron{
+        padding-top:10px;
+        padding-bottom:10px
+    }
+    .container
+    .jumbotron,
+    .container-fluid
+    .jumbotron{
+        padding-right:60px;
+        padding-left:60px}
+        .jumbotron .h1,.jumbotron h1{
+            font-size:63px
+        }}
