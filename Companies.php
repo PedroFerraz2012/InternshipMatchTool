@@ -48,7 +48,7 @@ $result = $conn->query($sql);
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="ait.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon"/>
   <link rel="stylesheet" type="text/css" href="Styles.css">
 </head>
 <body>
@@ -108,7 +108,9 @@ $result = $conn->query($sql);
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
+      <a href="Home.php">
        <img class="img13"src="./images/AIT_logo.svg" alt="aitlogo">
+</a>
     </div>
     
     <div class="collapse navbar-collapse " id="myNavbar">

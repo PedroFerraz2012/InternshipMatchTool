@@ -67,7 +67,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
+      <a href="Home.php">
        <img class="img13"src="./images/AIT_logo.svg" alt="aitlogo">
+</a>
     </div>
     
     <div class="collapse navbar-collapse " id="myNavbar">
