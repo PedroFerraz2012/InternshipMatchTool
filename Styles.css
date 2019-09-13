@@ -1,0 +1,194 @@
+  /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+.headerTxt{
+    color: white;
+    margin-top: 20px;
+    
+}
+.h4txt{
+    font-size: 11px;
+}
+.svgfilter{
+    height: 50px;
+}
+.svgpos{
+    padding-top: 10px;
+}
+.navbar-header{
+    width: 17%;
+}
+.svg12{
+  fill:pink;
+}
+.sv12{
+  fill: #94d31b;
+}
+.ul1{
+    list-style-type: none;
+    background-color: grey;
+    width: 100%;
+}
+.headingTxt{
+    font-size: 25px;
+}
+.li1{
+    width: 10%;
+     display: inline;
+    background-color: pink;
+}
+.img12{
+    width:20%;
+    height: 40px;
+   background-color: grey;
+}
+.img13{
+    width: 100%;
+    max-height: 100px;
+}
+.img14{
+    width: 20%;
+    max-height: 35px;
+    }
+.navbar{
+    background-color: #000000;
+    margin: 0px;
+    border: none;
+    color: white;
+}
+.active12{
+    background-color:#00aab0;
+    
+}
+.ac{
+    color: #ffffff;
+}
+.navbar-nav{
+    color: white;
+}
+.nav{
+    color: white;
+    width: 100%;
+}
+.li12{
+   
+    width: 20%;
+}
+.li16{
+   background-color: #00A9B0;
+    width: 20%;
+}
+
+.t1{
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.t2{
+    padding-top: 5px;
+    padding-left: 10px;
+}
+.well1{min-height:20px;  padding:5px;margin-bottom:20px; text-align:left; background-color:orange; border-radius:10px;color: white;
+
+
+
+}
+
+.well2{min-height:20px;  padding:5px;margin-bottom:20px; text-align:left; background-color:white; border-radius:10px;color: grey;
+
+
+
+}
+.colhead{ text-align: center;
+  
+}
+.colhead1{ text-align: center;
+      border-style: solid;
+  border-width: 1px;
+    background-color: white;
+}
+
+.well2:hover{ background-color:grey; color:white;
+
+
+
+}
+.rowhead{
+    
+    
+}
+
+
+.t1:hover{
+    color: white;
+}
+.content{
+    background-color: #e8e9e9;
+    margin-top: 10px;
+}
+.li12:hover{
+ background-color: grey;
+    width: 20%;
+}
+.sidenav{
+    background-color: white;
+}
+
+.well{min-height:20px; 
+    padding:5px;
+    margin-bottom:20px; 
+    text-align:left;
+    background-color:transparent;}
+
+.well:hover{
+    background-color: orange;
+    color: pink;
+    border:1px solid #e3e3e3;
+    border-radius:10px;
+}
+.text{
+    color: grey;
+  
+}
+.text:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover{color:pink;background-color:transparent}}.navbar-inverse .navbar-toggle{border-color:#333}
+
+
+
+
+
+.jumbotron{padding-top:10px;padding-bottom:10px; margin-bottom:0px;color:white;background-color:#00aab0}
+.jumbotron .h1,.jumbotron h1{color:inherit}
+.jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}
+.jumbotron>hr{border-top-color:#d5d5d5}.container .jumbotron,.container-fluid .jumbotron{padding-right:15px;padding-left:15px;border-radius:6px}.jumbotron .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:10px;padding-bottom:10px}.container .jumbotron,.container-fluid .jumbotron{padding-right:60px;padding-left:60px}.jumbotron .h1,.jumbotron h1{font-size:63px}}
