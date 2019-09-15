@@ -72,29 +72,8 @@ $result = $conn->query($sql);
             
             <img class="img14"src="./images/Pineapple_Solutions_logo.svg" alt="aitlogo">
             </h4>
-            
-      
+            </div>
     </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-  </div>
 </div>
     
     
