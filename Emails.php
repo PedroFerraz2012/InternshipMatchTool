@@ -37,8 +37,6 @@ session_start();
         <script src="Calendar/js/custom.js"></script>
     </head>
 
-    
-    
     <?php include('navigation.php'); ?>
 
         <div class="container-fluid text-center">
@@ -52,7 +50,7 @@ session_start();
 
                 </div>
                 <div class="col-sm-10 text-left content">
-                    
+                    <?php include('Calendar/index.php'); ?>
                 </div>
 
             </div>
