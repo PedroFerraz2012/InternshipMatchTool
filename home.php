@@ -25,16 +25,38 @@
 
                 </div>
                 <div class="col-sm-10 text-left content">
-                    <h1>Welcome</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <hr>
-                    <h3>Test</h3>
-                    <p>Lorem ipsum...</p>
+                    <table>
+                    <tr>
+                    
+                    <td width=65%>
+                    
+                    <p>
+                    This application is an <b>Internship Matching Tool</b>, designed to assist in matching AIT students with potential
+companies, reducing the time wasted when searching and deciding it.
+The system filters potential companies for students, keeps track of communication, keeps track of their status and ranking students and companies
+based upon their tiers and tech specs.<br> <br>
+<b>Companies Form</b><br>
+Acquiring information about companies, which are offering internships for
+students from different courses and skills.<br>
+<b>Students Form </b><br>
+Some information about the students, added and edited to match to potential companies.<br>
+<b>Communication</b><br>
+Ensuring communication is complete from all involved parts, by reminding in a Calendar.<br>
+<b>Search Filter Engine</b><br>
+Helps the best decision from on a list of students for the company, or a possible company for the student to
+apply for an internship, by the companies requirements or students skills<br>
+<b>Enrollment</b><br>
+By this list view, see the relation and status of Students with Companies.
+</p>
+                    </td>
+
+                    <td width=30% valign="top">
+                    <img src='images/cover.jpg' width=100% padding=5px> 
+                    </td>
+                    </tr>
+                    </table>
+                
+                    
                 </div>
 
             </div>
