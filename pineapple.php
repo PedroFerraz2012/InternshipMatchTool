@@ -32,16 +32,18 @@
                     <td width=65% valign="top">
                     
                     <p>
-                    Among trying to pass each subject at uni, or get in the school in time, or getting mamacitas, this team  has been working since the first day at class.
+                    <h3><b>Pineapple</b> Solutions</h3><br>
+                    Trying to pass each subject at uni, or get in the school in time, or getting mamacitas, this team  has been working, close or together, since the first day at class.<br>
+                    <br>This brand was designed to be our professional picture to work seriously in many projects along our IT course.<br>
+
+<br>Our <b>Achievements</b> include Game development, Ui/Ux, Security Authentication and other projects like this Internship Match Tool, just for now, and hoping many more in the future.
 <br><br>
-Achievements including game development, Ui/Ux and other projects like this Internship Match Tool, just for now, and hoping many more in the future.
-<br><br>
-All credits of this development to those AIT students: <b>Pedro Ferraz</b> 6008 and <b>Jayme Schmid</b> 6290.
+2019, All credits of this development to those AIT students: <b>Pedro Ferraz</b> 6008 and <b>Jayme Schmid</b> 6290.
 </p>
                     </td>
 
                     <td width=30% valign="top">
-                    <img src='images/cover.jpg' width=100% padding=5px> 
+                    <img src='images/jayme.svg' width=35% padding=25px> <img src='images/pedro.svg' width=35% padding=25px> 
                     </td>
                     </tr>
                     </table>
