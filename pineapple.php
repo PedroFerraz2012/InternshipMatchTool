@@ -19,7 +19,8 @@
                 <div class="col-sm-2 sidenav">
                     <a class="text">
                         <div class="well1">
-                            <p class="t2">Home</p>
+                            <img src="images/Pineapple_Solutions_logo.svg" alt="Pineaple Solutios Logo">
+                            <b>Pineapple</b> Solutions
                         </div>
                     </a>
 
@@ -28,30 +29,19 @@
                     <table>
                     <tr>
                     
-                    <td width=65%>
+                    <td width=65% valign="top">
                     
                     <p>
-                    This application is an <b>Internship Matching Tool</b>, designed to assist in matching AIT students with potential
-companies, reducing the time wasted when searching and deciding it.
-The system filters potential companies for students, keeps track of communication, keeps track of their status and ranking students and companies
-based upon their tiers and tech specs.<br> <br>
-<b>Companies Form</b><br>
-Acquiring information about companies, which are offering internships for
-students from different courses and skills.<br>
-<b>Students Form </b><br>
-Some information about the students, added and edited to match to potential companies.<br>
-<b>Communication</b><br>
-Ensuring communication is complete from all involved parts, by reminding in a Calendar.<br>
-<b>Search Filter Engine</b><br>
-Helps the best decision from on a list of students for the company, or a possible company for the student to
-apply for an internship, by the companies requirements or students skills<br>
-<b>Enrollment</b><br>
-By this list view, see the relation and status of Students with Companies.
+                    Among trying to pass each subject at uni, or get in the school in time, or getting mamacitas, this team  has been working since the first day at class.
+<br><br>
+Achievements including game development, Ui/Ux and other projects like this Internship Match Tool, just for now, and hoping many more in the future.
+<br><br>
+All credits of this development to those AIT students: <b>Pedro Ferraz</b> 6008 and <b>Jayme Schmid</b> 6290.
 </p>
                     </td>
 
                     <td width=30% valign="top">
-                    <img src='images/networking.svg' width=100% padding=5px> 
+                    <img src='images/cover.jpg' width=100% padding=5px> 
                     </td>
                     </tr>
                     </table>

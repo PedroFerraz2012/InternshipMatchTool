@@ -8,9 +8,10 @@
                 </div>
 
                 <div class="col-sm-4 text-right headerTxt">
+                <a href="pineapple.php">
                   <h4 class="h4txt"> Powered by <b>Pineapple</b> Solutions ©
                     <img class="img14" src="./images/Pineapple_Solutions_logo.svg" alt="PineapleSolutiosLogo">
-                  </h4>
+                  </h4></a>
                 </div>
               </div>
             </div>
