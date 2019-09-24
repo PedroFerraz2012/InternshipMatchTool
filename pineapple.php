@@ -38,7 +38,7 @@
 
 <br>Our <b>Achievements</b> include Game development, Ui/Ux, Security Authentication and other projects like this Internship Match Tool, just for now, and hoping many more in the future.
 <br><br>
-2019, All credits of this development to those AIT students: <b>Pedro Ferraz</b> 6008 and <b>Jayme Schmid</b> 6290.
+2019, All credits of this development to those AIT students: from right to left: <b>Pedro Ferraz</b> and <b>Jayme Schmid</b>.
 </p>
                     </td>
 

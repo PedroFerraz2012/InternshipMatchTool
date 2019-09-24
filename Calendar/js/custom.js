@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //defaultDate: '2019-04-12',
         editable: true,
         eventLimit: true, // allows "more" link when too many events
-        events: './list_events.php',
+        events: './Calendar/list_events.php',
         
         //cache
         extraParams: function () {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // will show in modal details
             $('#view #id').text(info.event.id); //message_type
             $('#view #title').text(info.event.title); //message_type
-            $('#view #to_whom').text(info.event.extendedProps.to_whom);//info.event.to_whom
+            $('#view #to_whom').text(info.event.extendedProps.to_whom);
             $('#view #start').text(info.event.start.toLocaleString());
             $('#view #content').text(info.event.extendedProps.content); // this is gonna be editable // info.event.content
             $('#view #status').text(info.event.extendedProps.status); // this is gonna be editable //
@@ -80,7 +80,7 @@ $(document).ready(function () {
         event.preventDefault(); //to pause the modal, not closing on click
        $.ajax({
             method: "POST",
-            url: "cad_event.php",
+            url: "./Calendar/cad_event.php",
             data: new FormData(this), //getting data, instantiating
             //avoiding errors
             contentType: false,
