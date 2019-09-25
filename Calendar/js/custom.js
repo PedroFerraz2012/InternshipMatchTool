@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
+        
         timeZone: 'Australia/Melbourne',
         locale: 'en-au',
         plugins: ['interaction', 'dayGrid'],
@@ -87,7 +88,7 @@ $(document).ready(function () {
             processData: false,
             success: function (retorna) { //case success or not, returns to calendar or alert
                 if (retorna['sit']) {
-                    //$("#msg-cad").html(retorna['msg']);
+                    $("#msg-cad").html(retorna['msg']);
                     location.reload(); //reloads the page
                 } else {
                     $("#msg-cad").html(retorna['msg']);

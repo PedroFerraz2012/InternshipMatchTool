@@ -164,10 +164,7 @@
     background-color:grey;
     color:white;
 }
-.rowhead{
-    
-    
-}
+
 .t1:hover{
     color: white;
 }
@@ -233,7 +230,8 @@
 .container .jumbotron,.container-fluid .jumbotron{
     padding-right:0px;
     padding-left:0px;
-    border-radius:6px
+    border-radius:6px;
+    margin: 0px;
 }
 .jumbotron .container{
         max-width:100%

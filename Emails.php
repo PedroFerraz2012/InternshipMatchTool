@@ -1,3 +1,6 @@
+<?php
+        session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css-->
         <!--desabling this-->
         <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
         <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon" />
@@ -23,7 +26,7 @@
         <link href='Calendar/css/daygrid/main.min.css' rel='stylesheet' />
         <!-- css bootstrap for modal-->
         <!--desabling this for while-->
-        <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
         <!-- my css for calendar: custom.css CHECKED NOT CONFLICTING-->
         <link rel="stylesheet" href="Calendar/css/custom.css">
@@ -37,17 +40,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
         <!-- js bootstrap for modal-->
-        <!--script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="./Calendar/js/custom.js"></script>
-        <?php
-        session_start();
-
-            if(isset($_SESSION['msg']))
-    {
-    echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    }
-        ?>
+        
+        
     </head>
 
     <?php include('navigation.php'); ?>
@@ -63,7 +59,17 @@
 
             </div>
             <div class="col-sm-10 text-left content">
-            
+            <?php
+        
+        if(isset($_SESSION['msg']))
+    {
+    echo $_SESSION['msg'];
+    unset($_SESSION['msg']);
+
+    //Set Refresh header using PHP.
+    header( "refresh:4;url=http://localhost/_myFiles/internshipMatchTool/Emails.php" );
+    }
+        ?>
                 <!--where the calendar comes-->                
                 <div id='calendar' margin-top='0'></div>
             </div>

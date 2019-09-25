@@ -12,6 +12,8 @@ $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $data_start = str_replace('/', '-', $dados['start']);
 $data_start_conv = date("Y-m-d H:i:s", strtotime($data_start));
 
+$status = 'ToDo';
+
 //preparing query to save in the db, using links for values
 
 $query_event = "INSERT INTO messages (message_type, color, date, to_whom, content, remind_date, status) VALUES (:message_type, :color, :date, :to_whom, :content, :remind_date, :status)";
@@ -24,15 +26,15 @@ $insert_event->bindParam(':date', $data_start_conv);
 $insert_event->bindParam(':to_whom', $dados['to_whom']);
 $insert_event->bindParam(':content', $dados['content']);
 $insert_event->bindParam(':remind_date', $dados['remind_date']);
-$insert_event->bindParam(':status', $dados['status']);
+$insert_event->bindParam(':status', $status);
 
 //executing query in the db
 if ($insert_event->execute()) {
     //arrays (success or not) message and situation
-    $retorna = ['sit' => true, 'msg' => '<div class="alert alert-success" role="alert">Event added successfuly!</div>'];
-    $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Event added successfuly!</div>';
+    $retorna = ['sit' => true, 'msgcad' => '<div class="alert alert-success" role="alert">Event added successfuly!</div>'];
+    $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Event added successfuly! Data: '.$dados['title'].', '.$dados['color'].', '.$data_start_conv.', '.$dados['to_whom'].', '.$dados['content'].', '.$dados['remind_date'].', '.$status.'</div>';
 } else {
-    $retorna = ['sit' => false, 'msg' => '<div class="alert alert-danger" role="alert">Error: Event additon unsuccessed!</div>'];
+    $retorna = ['sit' => false, 'msgcad' => '<div class="alert alert-danger" role="alert">Error: Event additon unsuccessed! Data: '.$dados['title'].', '.$dados['color'].', '.$data_start_conv.', '.$dados['to_whom'].', '.$dados['content'].', '.$dados['remind_date'].', '.$status.'</div>'];
 }
 
 
