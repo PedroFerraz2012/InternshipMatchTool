@@ -42,7 +42,7 @@ $result = $conn->query($sql);
   <title>Internship Match Tool</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon"/>
@@ -157,9 +157,11 @@ $result = $conn->query($sql);
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>By Pedro Ferraz 6008 and Jayme Schmid 6290</p>
-</footer>
+ <footer id="sticky-footer" class="footer12">
+    <div class="container text-center">
+     <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
+    </div>
+  </footer>
 
 </body>
 </html>
