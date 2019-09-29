@@ -62,7 +62,7 @@ By this list view, see the relation and status of Students with Companies.
             </div>
         </div>
 
-        <footer id="sticky-footer" class="footer12">
+         <footer id="sticky-footer" class="footer12">
     <div class="container text-center">
      <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
     </div>
