@@ -1,10 +1,51 @@
+<?php
+if (session_id() == '' || !isset($_SESSION)) {
+
+session_start();
+   
+    $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "internshipdatabase";
+    try{
+    $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+    $test=false;
+        $numberOfItems1= 0;
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes FROM company";
+$result = $conn->query($sql);
+    
+     
+        
+}
+    catch(PDOException $e){
+    echo $sql . "<br>" . $e->getMessage(); 
+}
+}
+ else {
+    echo "0 results";
+}
+
+    
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Internship Match Tool</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon"/>
@@ -35,19 +76,45 @@
         
     </div>
     <div class="col-sm-10 text-left content"> 
-      <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      <form action="Companies_new_ap.php" method=post>
+  Company Name:<br>
+  <input id="username" type="text" name="CompanyName" Placeholder="Company Name">
+  <br>
+  Contact Person:<br>
+  <input id="t2" type="text" name="ContactPerson" Placeholder="Contact Person">
+         <br>
+          Website:<br>
+  <input id="t3" type="text" name="Website" Placeholder="Website">
+     <br><br>
+           Description:<br>
+  <input id="t3" type="text" name="Description" Placeholder="Description">
+     <br><br>
+           Tier Rate:<br>
+  <input id="t3" type="text" name="TierRate" Placeholder="Tier Rate">
+     <br><br>
+          Notes :<br>
+  <input id="t3" type="text" name="Notes" Placeholder="Notes">
+     <br><br>
+  <input type="submit" value="Add New Company"  
+        >
+  <br><br>
+</form> 
+         <?php
+        if(isset($_SESSION['messageReg12'])){
+           echo $_SESSION["messageReg12"] ; 
+        }
+        
+        ?> 
     </div>
     
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>By Pedro Ferraz 6008 and Jayme Schmid 6290</p>
-</footer>
+ <footer id="sticky-footer" class="footer12">
+    <div class="container text-center">
+     <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
+    </div>
+  </footer>
 
 </body>
 </html>

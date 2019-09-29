@@ -45,7 +45,7 @@ $result = $conn->query($sql);
   <title>Internship Match Tool</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon"/>
@@ -80,19 +80,54 @@ $result = $conn->query($sql);
       
         
         
+            
+     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    
+     <select id="mySelect1" onchange="myFunction2()">
+            <option value="" disabled selected>Select a contact person </option>
+         <option value="0">Display all contact people</option>
+         
+           <?php 
+    
+    $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes FROM company";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
         
-        
-        <table style="width:100%">
-            <tr class="rowhead">
-    <th class="colhead">Company Name</th>
+            
+         ?>
+  
+              <option value="<?php echo $row["contact_person"];?>">
+          <?php echo $row["contact_person"];?></option> 
+    <?php } ?>
+         
+
+</select>
+    <select id="mySelect" onchange="myFunction1()">
+            <option value="" disabled selected>Select a tier </option>
+    <option value="0">Display all</option>
+  <option value="1">Tier 1</option>
+  <option value="2">Tier 2</option>
+  <option value="3">Tier 3</option>
+  <option value="4">Tier 4</option>
+    <option value="5">Tier 5</option>
+</select>
+
+<table id="myTable" style="width:100%">
+  <tr class="rowhead">
+   <th class="colhead">Company Name</th>
     
     <th class="colhead">Contact Person</th>
      <th class="colhead">website</th>    
                 <th class="colhead">Description</th>
                     <th class="colhead">Tier rate</th>
                  <th class="colhead">notes</th>
+      <th class="colhead"></th>
   </tr>
-        <?php 
+  
+    
+    
+    
+     <?php 
     
     $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes FROM company";
 $result = $conn->query($sql);
@@ -105,60 +140,146 @@ $result = $conn->query($sql);
             
             
             <tr>
-           <th class="colhead1"> <p><?php echo $row["company_name"];?></p>
-               </th>
-                
-
-         <th class="colhead1"><p><?php echo $row["contact_person"];?></p></th>
-        <th class="colhead1">
-        <p><?php echo $row["website"];?></p>
-            </th>
+           <td ><?php echo $row["company_name"];?>
+               </td>
+             <td>
+          <?php echo $row["contact_person"];?></td>   
+                 <td>
+          <?php echo $row["website"];?></td> 
+              <td>
+          <?php echo $row["description"];?></td>   
+        <td>
+          <?php echo $row["tier_rate"];?></td>
+                 <td>
+          <?php echo $row["notes"];?></td>
         
-        <th class="colhead1">
-        <p><?php echo $row["description"];?></p></th>
-                
-        <th class="colhead1">
-          <p><?php echo $row["tier_rate"];?></p></th>
-        <th class="colhead1">
-                  <p><?php echo $row["notes"];?></p>
-            </th>
+                <td> <form action="Companies_details_ap.php" method=post>
+                    <input type="hidden"  name="CompName" value="<?php echo $row["company_name"];?>">
+   <input type="hidden"  name="CompId" value="<?php echo $row["company_id"];?>">
+  <input type="submit" value="More details"  
+        >
+  
+</form> </td>
             
             </tr>
             
             
             
-  <div class="row">
-    <div class="col-sm-3">
-    
-        
-        
-        
-        
-        
-        <form action="itemPageAction.php" method="post">
-           <?php $value123=$row["company_name"];?>
-<input  type="hidden" name="itemName1" id="itemName1" value= "<?php echo $value123 ?>">
-</form> 
-         
-    </div>
+  
     <?php } ?>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </div>
-        </table>
+    
+ 
+</table>
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>By Pedro Ferraz 6008 and Jayme Schmid 6290</p>
-</footer>
+ <footer id="sticky-footer" class="footer12">
+    <div class="container text-center">
+     <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
+    </div>
+  </footer>
 
 </body>
 </html>
+
+
+
+
+
+<script>
+function myFunction1() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  
+  filter = document.getElementById("mySelect").value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+      
+      
+     //this displays all of the results  
+      if (filter==0|| filter=="0"){
+      if (td) {
+      txtValue = td.textContent || td.innerText;
+      
+        tr[i].style.display = "";
+          console.log("1");
+     
+     
+      
+    }  
+      }
+      
+ else if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+          console.log("1");
+      } else {
+        tr[i].style.display = "none";
+          console.log("2");
+      }
+    }       
+  }
+}
+    
+    
+    function myFunction2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  
+  filter = document.getElementById("mySelect1").value.toUpperCase();
+        console.log(filter);
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+      
+      
+     //this displays all of the results  
+      if (filter==0|| filter=="0"){
+      if (td) {
+      txtValue = td.textContent || td.innerText;
+      
+        tr[i].style.display = "";
+          console.log("1");
+     
+     
+      
+    }  
+      }
+      
+ else if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+          console.log("1");
+      } else {
+        tr[i].style.display = "none";
+          console.log("2");
+      }
+    }       
+  }
+}
+
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+</script>
