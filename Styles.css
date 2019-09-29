@@ -1,9 +1,5 @@
   /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
+   
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 450px}
     
@@ -20,6 +16,9 @@
       color: white;
       padding: 15px;
     }
+.footer12{
+    margin-top: 10px;
+}
     
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
@@ -34,17 +33,21 @@
     margin-top: 0px;
     
 }
+
+
 .h4txt{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
+    margin-top: 2%;
+    padding-top: 2%;
 }
 .svgfilter{
     max-height: 40px;
 }
 .svgpos{
-    margin-top: -5px;
-    padding-top: -5px;
-    max-height: 35px;
+padding-bottom: 10px;
+   
+    align-content: center;
 }
 .navbar-header{
     width: 17%;
@@ -52,6 +55,14 @@
 .svg12{
   fill:pink;
 }
+
+
+.navicolor{
+    background-color: #000000;
+    height: 100px;
+}
+
+
 .sv12{
   fill: #94d31b;
 }
@@ -68,10 +79,19 @@
 /*header
 */
 .headingTxt{
-    font-size: 20px;
+    font-size: 10%;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
     padding: 0;
+}
+
+.list{
+    display: inline;
+  list-style-type: none;
+  
+}
+.list1{
+    display: inline-block;
 }
 .li1{
     width: 10%;
@@ -94,13 +114,13 @@
     width: 20%;
     max-height: 20px;
     }
-.navbar{
-    background-color: #000000;
-    margin: 0px;
-    border: none;
-    color: white;
-    font-size: 12px;
-}
+
+  
+
+
+
+
+
 .active12{
     background-color:#00a9b0;
     
@@ -108,15 +128,32 @@
 .ac{
     color: #ffffff;
 }
-.navbar-nav{
+.navbar1{
+    background-color: #000000;
+    
     color: white;
+    font-size: 12px;
+     
+    height: 100px;;
 }
-.nav{
-    color: white;
-    width: 100%;
-}
+
 .li12{
-    width: 20%;
+   width: 100%;
+    margin: auto;
+    text-align: center;
+   
+}
+.li12:hover{
+ background-color: #003438;
+  margin: auto;
+    width: 100%;
+    height: 100px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.li18{
+    
+    width: 100%;
 }
 
 .li16{
@@ -164,7 +201,10 @@
     background-color:grey;
     color:white;
 }
-
+.rowhead{
+    
+    
+}
 .t1:hover{
     color: white;
 }
@@ -172,10 +212,7 @@
     background-color: #e8e9e9;
     margin-top: 10px;
 }
-.li12:hover{
- background-color: #003438;
-    width: 20%;
-}
+
 .sidenav{
     background-color: white;
 }
@@ -201,13 +238,7 @@
     text-decoration: none;
 }
 
-.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover{
-    color:pink;
-    background-color:transparent;
-}
-.navbar-inverse .navbar-toggle{
-    border-color:#333
-}
+
 
 .jumbotron{
     padding-top:0px;
@@ -230,8 +261,7 @@
 .container .jumbotron,.container-fluid .jumbotron{
     padding-right:0px;
     padding-left:0px;
-    border-radius:6px;
-    margin: 0px;
+    border-radius:6px
 }
 .jumbotron .container{
         max-width:100%
