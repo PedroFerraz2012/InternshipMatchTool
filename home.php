@@ -11,7 +11,7 @@
         <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="Styles.css">
     </head>
-
+<body>
     <?php include('navigation.php'); ?>
 
         <div class="container-fluid text-center">
