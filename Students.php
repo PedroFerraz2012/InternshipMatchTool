@@ -75,19 +75,28 @@ $result = $conn->query($sql);
     </div>
     <div class="col-sm-10 text-left content"> 
   
+         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by first name.." title="Type in a name">
+    <input type="text" id="myInput1" onkeyup="myFunction2()" placeholder="Search by last name.." title="Type in a name">
         
         
-        <table style="width:100%">
-            <tr class="rowhead">
-    <th class="colhead">Given Name</th>
+
+        
+        <table id="myTable" style="width:100%">
+  <tr class="rowhead">
+   <th class="colhead">Fist name</th>
     
-    <th class="colhead">Surname</th>
-     <th class="colhead">Course</th>    
-                <th class="colhead">DOB</th>
-                    <th class="colhead">Email</th>
-                 <th class="colhead">Phone number</th>
+    <th class="colhead">Last name</th>
+     <th class="colhead">dob</th>    
+                <th class="colhead">Email</th>
+                    <th class="colhead">Notes</th>
+                 <th class="colhead">Student id</th>
+      <th class="colhead"></th>
   </tr>
-        <?php 
+  
+    
+    
+    
+     <?php 
     
     $sql = "SELECT s_id,first_name,last_name,dob,email,notes,student_id FROM students";
 $result = $conn->query($sql);
@@ -100,40 +109,36 @@ $result = $conn->query($sql);
             
             
             <tr>
-           <th class="colhead1"> <p><?php echo $row["first_name"];?></p>
-               </th>
-                
-
-         <th class="colhead1"><p><?php echo $row["last_name"];?></p></th>
-        <th class="colhead1">
-        <p>need to fix table</p>
-            </th>
+           <td class="colhead1" ><?php echo $row["first_name"];?>
+               </td>
+             <td class="colhead1">
+          <?php echo $row["last_name"];?></td>   
+                 <td class="colhead1">
+          <?php echo $row["dob"];?></td> 
+              <td class="colhead1">
+          <?php echo $row["email"];?></td>   
+        <td class="colhead1">
+          <?php echo $row["notes"];?></td>
+                 <td class="colhead1">
+          <?php echo $row["student_id"];?></td>
         
-        <th class="colhead1">
-        <p><?php echo $row["dob"];?></p></th>
-                
-        <th class="colhead1">
-          <p><?php echo $row["email"];?></p></th>
-        <th class="colhead1">
-                  <p><?php echo $row["notes"];?></p>
-            </th>
+                <td> <form action="Students_details_ap.php" method=post>
+                    <input type="hidden"  name="stuId" value="<?php echo $row["s_id"];?>">
+   
+  <input type="submit" value="More details"  
+        >
+  
+</form> </td>
             
             </tr>
             
             
             
-  <div class="row">
-    <div class="col-sm-3">
-    
-        
-        
-        
-        
-        
-        
-         
-    </div>
+  
     <?php } ?>
+    
+ 
+</table>
         
         
         
@@ -143,8 +148,17 @@ $result = $conn->query($sql);
         
         
         
-    </div>
-        </table>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -165,3 +179,47 @@ $result = $conn->query($sql);
 
 </body>
 </html>
+
+
+
+<script>
+
+
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+    function myFunction2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput1");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+</script>

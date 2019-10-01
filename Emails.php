@@ -45,7 +45,7 @@
         
         
     </head>
-
+<body>
     <?php include('navigation.php'); ?>
 
     <div class="container-fluid text-center">
@@ -76,9 +76,11 @@
         </div>
     </div>
 
-    <footer class="container-fluid text-center">
-        <p>By Pedro Ferraz 6008 and Jayme Schmid 6290</p>
-    </footer>
+    <footer id="sticky-footer" class="footer12">
+    <div class="container text-center">
+     <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
+    </div>
+  </footer>
 
     <!--MODALS-->
     
