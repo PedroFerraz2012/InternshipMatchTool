@@ -73,7 +73,9 @@
     unset($_SESSION['msg']);
 
     //Set Refresh header using PHP.
-    header( "refresh:4;url=http://localhost/_myFiles/internshipMatchTool/Emails.php" );
+    /*header( "refresh:4;url=./Emails.php" );
+    $url1=$_SERVER['REQUEST_URI'];
+    header("Refresh: 4; URL=$url1");*/
     }
         ?>
                     <!--where the calendar comes-->
@@ -82,7 +84,7 @@
             </div>
         </div>
 
-        <footer id="sticky-footer" class="footer12">
+        <footer class="footer-communication">
             <div class="container text-center">
                 <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
             </div>

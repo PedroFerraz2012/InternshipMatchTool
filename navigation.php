@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4" class="headingTxt">
-                <h2>AIT Internship Match Tool</h2>
+                <h4>AIT Internship Match Tool</h4>
             </div>
             <div class="col-sm-4"> <a href="pineapple.php">
                     <h4 class="h4txt"> Powered by <b>Pineapple</b> Solutions ©
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-sm navicolor " id="myNavbar">
+<nav class="navbar navbar-expand-sm navicolor" id="myNavbar">
     <a class="navbar-brand" href="Home.php"><img class="img13" src="./images/AIT_logo.svg" alt="aitlogo"></a>
     <ul class="navbar-nav li18">
         <li class="nav-item li12">

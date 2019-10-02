@@ -1,6 +1,27 @@
   /* Remove the navbar's default margin-bottom and rounded borders */ 
    
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+body{
+    
+    font-size: 14px;
+}
+
+
+/*
+trying to change border color from a row, when btn is hover
+*/
+.infoBtn:hover > .info-row {
+        border-color: orange;
+    }
+
+/*
+    .footer-communication{
+        position: relative;
+        margin-top: 10px;
+        
+    }
+    */
+
     .row.content {height: 450px}
     
     /* Set gray background color and 100% height */
@@ -39,14 +60,14 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
     margin-top: 2%;
-    padding-top: 2%;
+    padding: 3px;
 }
 .svgfilter{
-    max-height: 40px;
+    max-height: 35px;
 }
 .svgpos{
 padding-bottom: 10px;
-   
+max-height: 45px;
     align-content: center;
 }
 .navbar-header{
@@ -78,11 +99,15 @@ padding-bottom: 10px;
 }
 /*header
 */
-.headingTxt{
-    font-size: 10%;
+.headingTxt .col-sm-4{
     font-family: Arial, Helvetica, sans-serif;
+    
+    
+    /*
+    font-size: 10%;    
     margin: 10px;
-    padding: 0;
+    padding-top: 5px;
+    */
 }
 
 .list{
@@ -170,7 +195,7 @@ padding-bottom: 10px;
     padding-left: 10px;
 }
 .well1{
-    min-height:20px;
+    min-height:18px;
     padding:5px;
     margin-bottom:20px;
     text-align:left;
@@ -180,7 +205,7 @@ padding-bottom: 10px;
 }
 
 .well2{
-    min-height:20px;
+    min-height:18px;
     padding:5px;
     margin-bottom:20px;
     text-align:left;
@@ -237,7 +262,9 @@ padding-bottom: 10px;
     color: white;
     text-decoration: none;
 }
-
+h4{
+    padding-top:3px;
+}
 
 
 .jumbotron{
@@ -246,13 +273,14 @@ padding-bottom: 10px;
     margin-bottom:0px;
     color:white;
     background-color:#02C8CF;
+    border-radius:0;
 }
 .jumbotron .h1,.jumbotron h1{
     color:inherit
 }
 .jumbotron p{
-    margin-bottom:5px;
-    font-size:21px;
+    margin-bottom:2px;
+    font-size:15px;
     font-weight:200
 }
 .jumbotron>hr{
@@ -261,7 +289,7 @@ padding-bottom: 10px;
 .container .jumbotron,.container-fluid .jumbotron{
     padding-right:0px;
     padding-left:0px;
-    border-radius:6px
+    
 }
 .jumbotron .container{
         max-width:100%
@@ -269,8 +297,8 @@ padding-bottom: 10px;
 
 @media screen and (min-width:768px){
     .jumbotron{
-        padding-top:10px;
-        padding-bottom:10px
+        padding-top:0px;
+        padding-bottom:0px
     }
     /*
     .container
