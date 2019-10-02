@@ -30,7 +30,7 @@ $test= false;
     
     
 
-   
+   $CompanyType= $_POST["CompanyType"];
     $CompanyName= $_POST["CompanyName"];
       $ContactPerson= $_POST["ContactPerson"];   
        $Website= $_POST["Website"];
@@ -39,8 +39,8 @@ $test= false;
       $Notes= $_POST["Notes"];
         
     
-           try{ $sql = "INSERT INTO company (company_name, contact_person, website,description,tier_rate,notes)
-    VALUES ('".$CompanyName."', '".$ContactPerson."', '".$Website."', '".$Description."', '".$TierRate."', '".$Notes."')";
+           try{ $sql = "INSERT INTO company (company_name, contact_person, website,description,tier_rate,notes,TypeOfCompany)
+    VALUES ('".$CompanyName."', '".$ContactPerson."', '".$Website."', '".$Description."', '".$TierRate."', '".$Notes."', '".$CompanyType."')";
     // use exec() because no results are returned
     
                

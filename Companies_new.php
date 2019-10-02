@@ -88,10 +88,56 @@ $result = $conn->query($sql);
      <br><br>
            Description:<br>
   <input id="t3" type="text" name="Description" Placeholder="Description">
+      <br>
+          Tier rate:<br>
+          
+          
+      
+                    <?php
+          
+echo "<select name='TierRate'>";
+    
+    $sql = "SELECT companyTier FROM companytierrate";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        
+        
+    echo "<option value='" . $row['companyTier'] . "'>" . $row['companyTier'] . "</option>";
+}
+echo "</select>";
+         
+         ?>
+
+                    <?php ?>
+
      <br><br>
-           Tier Rate:<br>
-  <input id="t3" type="text" name="TierRate" Placeholder="Tier Rate">
+          
+          
+           <br>
+          Company Type:<br>
+          
+          
+      
+                    <?php
+          
+echo "<select name='CompanyType'>";
+    
+    $sql = "SELECT  DISTINCT(courseType) FROM courses";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        
+        
+    echo "<option value='" . $row['courseType'] . "'>" . $row['courseType'] . "</option>";
+}
+echo "</select>";
+         
+         ?>
+
+                    <?php ?>
+
      <br><br>
+          
+          
           Notes :<br>
   <input id="t3" type="text" name="Notes" Placeholder="Notes">
      <br><br>
