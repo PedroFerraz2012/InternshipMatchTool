@@ -19,9 +19,14 @@
     <div class="col-sm-2 sidenav">
       <a class="text">
         <div class="well1">
-     <p class="t2">Tech Stack</p>
+     <p class="t2">Course Tech Stack</p>
       </div>
        </a> 
+        <a class="text" href="Enrollments_comp.php">
+                    <div class="well2">
+                        <p class="t2">Company Tiers </p>
+                    </div>
+                </a>
         
     </div>
     <div class="col-sm-10 text-left content"> 
