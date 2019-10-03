@@ -93,6 +93,7 @@ $result = $conn->query($sql);
                         <th class="colhead">Email</th>
                         <th class="colhead">Notes</th>
                         <th class="colhead">Student id</th>
+                        <th class="colhead">Course</th>
                         <th class="colhead"></th>
                     </tr>
 
@@ -101,7 +102,7 @@ $result = $conn->query($sql);
 
                     <?php 
     
-    $sql = "SELECT s_id,first_name,last_name,dob,email,notes,student_id FROM students";
+    $sql = "SELECT s_id,first_name,last_name,dob,email,notes,student_id,courses FROM students";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         
@@ -124,7 +125,8 @@ $result = $conn->query($sql);
                             <?php echo $row["notes"];?></td>
                         <td class="colhead1">
                             <?php echo $row["student_id"];?></td>
-
+<td class="colhead1">
+                            <?php echo $row["courses"];?></td>
                         <td>
                             <form action="Students_details_ap.php" method=post>
                                 <input type="hidden" name="stuId" value="<?php echo $row["s_id"];?>">

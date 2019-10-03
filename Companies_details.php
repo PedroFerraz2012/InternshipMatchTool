@@ -78,6 +78,13 @@ $result = $conn->query($sql);
         
     </div>
     <div class="col-sm-10 text-left content"> 
+        
+        <?php 
+        
+           if(isset($_SESSION["CompId"])){
+        
+        ?>
+        
       <table id="myTable" style="width:100%">
   <tr class="rowhead">
    <th class="colhead">Company Name</th>
@@ -232,6 +239,19 @@ $result = $conn->query($sql);
     
  
 </table>
+        
+        <?php }
+          else{
+              
+              
+              
+          ?> <P style="color:black;text-align:center;">Please select a company inorder to view their details</P> <?php
+               
+          }
+          
+          
+          ?>
+        
         
         
         

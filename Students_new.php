@@ -85,8 +85,34 @@ $result = $conn->query($sql);
   <input id="t2" type="text" name="LastName" Placeholder="Last Name">
          <br>
           dob:<br>
-  <input id="t3" type="text" name="dob" Placeholder="dob">
+  <input id="t3" type="date" name="dob" Placeholder="dob">
+     <br>
+           <br>
+          Courses:<br>
+          
+          
+      
+                    <?php
+          
+echo "<select name='CourseSel'>";
+    
+    $sql = "SELECT courseId,courseName,schoolName,courseType FROM courses";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        
+        
+    echo "<option value='" . $row['courseName'] . "'>" . $row['courseName'] . "</option>";
+}
+echo "</select>";
+         
+         ?>
+
+                    <?php ?>
+
      <br><br>
+          
+          
+          
            Email:<br>
   <input id="t3" type="text" name="Email" Placeholder=" Email">
      <br><br>

@@ -78,6 +78,16 @@ $result = $conn->query($sql);
         
     </div>
     <div class="col-sm-10 text-left content"> 
+        
+        
+        <?php 
+        
+           if(isset($_SESSION["stuId"])){
+        
+        ?>
+        
+        
+        
       <table id="myTable" style="width:100%">
   <tr class="rowhead">
    <th class="colhead">first name</th>
@@ -94,8 +104,14 @@ $result = $conn->query($sql);
     
     
      <?php 
-  $session12=$_SESSION["stuId"];
+
          
+          
+          
+          
+       
+          
+                $session12=$_SESSION["stuId"];
     $sql = "SELECT s_id,first_name,last_name,dob,email,notes,student_id FROM students";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
@@ -127,7 +143,7 @@ $result = $conn->query($sql);
             
             
   
-        <?php }} ?>
+        <?php }}?>
     
  
 </table>
@@ -232,7 +248,17 @@ $result = $conn->query($sql);
     
  
 </table>
-        
+        <?php }
+          else{
+              
+              
+              
+          ?> <P style="color:black;text-align:center;">Please select a student inorder to view their details</P> <?php
+               
+          }
+          
+          
+          ?>
         
         
     </div>

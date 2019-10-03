@@ -1,6 +1,17 @@
 
  <?php
 session_start();
+
+
+
+
+
+            echo $_SESSION["CompId"];  
+header('Location: companies_details.php');
+
+
+
+session_start();
     $servername = "localhost";
 $username = "root";
 $password = "";
@@ -25,28 +36,30 @@ $test= false;
         echo "flase";
    
     
+    $Tier= $_POST["CompTier"];    
+    $Min= $_POST["CompNewMin"];
+ $Max= $_POST["CompNewMax"];
+    
     
     
     
     
 
-   $CompanyType= $_POST["CompanyType"];
-    $CompanyName= $_POST["CompanyName"];
-      $ContactPerson= $_POST["ContactPerson"];   
-       $Website= $_POST["Website"];
-      $Description= $_POST["Description"];
-        $TierRate= $_POST["TierRate"];
-      $Notes= $_POST["Notes"];
+   
+        
+       
         
     
-           try{ $sql = "INSERT INTO company (company_name, contact_person, website,description,tier_rate,notes,TypeOfCompany)
-    VALUES ('".$CompanyName."', '".$ContactPerson."', '".$Website."', '".$Description."', '".$TierRate."', '".$Notes."', '".$CompanyType."')";
+           try{ $sql = "UPDATE companytierrate
+SET companyMinimumRate = '".$Min."', companyMaximumRate= '". $Max."'
+WHERE companyTier = '".$Tier."';
+   ";
     // use exec() because no results are returned
     
                
     
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "updated";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }  
@@ -56,7 +69,7 @@ if ($conn->query($sql) === TRUE) {
                
                
                
- echo "New record created successfully";
+ echo "updated";
     }
 catch(PDOException $e)
     {
@@ -65,9 +78,37 @@ catch(PDOException $e)
      $_SESSION["messageReg12"] ="added";
             echo $_SESSION["messageReg12"];    
 }
-header('Location: Companies_new.php');
+header('Location: Enrollments_comp.php');
 $conn->close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?> 
-
-
-

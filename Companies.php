@@ -16,7 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes FROM company";
+$sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes,TypeOfCompany FROM company";
 $result = $conn->query($sql);
     
      
@@ -91,7 +91,7 @@ $result = $conn->query($sql);
 
                     <?php 
     
-    $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes FROM company";
+    $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes,TypeOfCompany FROM company";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         
@@ -123,6 +123,7 @@ $result = $conn->query($sql);
                         <th class="colhead">Description</th>
                         <th class="colhead">Tier rate</th>
                         <th class="colhead">notes</th>
+                          <th class="colhead">companies focus</th>
                         <th class="colhead"></th>
                     </tr>
 
@@ -131,7 +132,7 @@ $result = $conn->query($sql);
 
                     <?php 
     
-    $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes FROM company";
+    $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes,TypeOfCompany FROM company";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         
@@ -154,6 +155,8 @@ $result = $conn->query($sql);
                             <?php echo $row["tier_rate"];?></td>
                         <td>
                             <?php echo $row["notes"];?></td>
+                        <td>
+                            <?php echo $row["TypeOfCompany"];?></td>
 
                         <td>
                             <form action="Companies_details_ap.php" method=post>
