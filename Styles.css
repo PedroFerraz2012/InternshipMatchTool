@@ -219,6 +219,13 @@ max-height: 45px;
     font-weight: normal;
   
 }
+#myInput, #myInput1, #mySelect1, #mySelect{
+    border-style: solid;
+    border-color: #BDBFC1;
+    border-width: 2px;
+    padding-left: 5px;
+}
+
 .colhead1{
     text-align: center;
     border-style: solid;
