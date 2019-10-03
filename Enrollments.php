@@ -1,3 +1,41 @@
+<?php
+if (session_id() == '' || !isset($_SESSION)) {
+
+session_start();
+   
+    $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "internshipdatabase";
+    try{
+    $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+    $test=false;
+        $numberOfItems1= 0;
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes,TypeOfCompany FROM company";
+$result = $conn->query($sql);
+    
+     
+        
+}
+    catch(PDOException $e){
+    echo $sql . "<br>" . $e->getMessage(); 
+}
+}
+ else {
+    echo "0 results";
+}
+
+    
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,11 +68,109 @@
         
     </div>
     <div class="col-sm-10 text-left content"> 
-      <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+       <table id="myTable" style="width:100%">
+                    <tr class="rowhead">
+                        <th class="colhead">Tech Stack Name</th>
+
+                       
+                        <th class="colhead"></th>
+                    </tr>
+
+
+
+
+                    <?php 
+    
+           $query = $conn->query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'internshipdatabase' AND TABLE_NAME = 'student_assests'");
+
+while($row = $query->fetch_assoc()){
+    $result[] = $row;
+    echo $row['Field'];
+}
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+    $sql = "
+
+SHOW COLUMNS FROM student_assets";
+$result = $conn->query($sql);
+         
+    while($row = $result->fetch_assoc()) {
+        if( $row['Field'] !="student_id"&& $row['Field'] !="asset_id"){
+            
+         ?>
+
+
+
+
+                    <tr>
+                        <td><?php echo $row['Field'];?>
+                        </td>
+                        
+
+                       
+                            <?php 
+            if( $row['Field'] !="tech_skill"&&$row['Field'] !="soft_skill"&&$row['Field'] !="coding_ability"&&$row['Field'] !="social_ability"&&$row['Field'] !="punctuality_reliability" &&$row['Field'] !="team_dynamics" &&$row['Field'] !="job_ready_professionalism" &&$row['Field'] !="hardworking" &&$row['Field'] !="qualifications" &&$row['Field'] !="qualification_rating" &&$row['Field'] !="work_experience" &&$row['Field'] !="work_ex_rating" &&$row['Field'] !="overall_asset_rating"                  ){
+                
+            
+                
+                
+            
+            
+            
+            ?>
+                             <td>
+                            
+                            <form action="Enrollments_drop_ap.php" method=post>
+                              
+                                <input type="hidden" name="FieldName" value="<?php echo $row['Field'];?>">
+                                <input type="submit" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="delete" width="20" height="20">
+
+                            </form>
+                        </td>
+                        
+                        <?php
+            
+            }?>
+
+                    </tr>
+           
+        
+
+
+
+
+                    <?php }} ?>
+
+           <tr>
+           <td>
+               <h4>Add a new tech stack</h4>
+               <form action="Enrollments_add_ap.php" method=post>
+                               
+                                <input type="Text" name="NewTechS" >
+                                <input type="submit" alt="submit" fill="orange" value="add new tech stack" width="20" height="20">
+
+                            </form>
+               
+               </td>
+                <td>
+                
+               </td>
+               
+           
+           
+           </tr>
+
+                </table>
     </div>
     
   </div>

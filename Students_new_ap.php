@@ -51,6 +51,89 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }  
                
+     $student_id="1";      
+               
+            try{ $sql = "SELECT s_id FROM `students` ORDER BY s_id DESC LIMIT 1 ";
+    // use exec() because no results are returned
+    
+               
+    
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        $student_id=$row["s_id"];
+    }
+            echo $student_id;
+            
+           
+                 try{ $sql = "INSERT INTO student_assets(student_id)
+    VALUES (".$student_id.") ";
+    // use exec() because no results are returned
+    
+               
+    
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}  
+               
+               
+               
+               
+               
+               
+ echo "New record created successfully";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "<br>" . $e->getMessage();
+    }  
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+               
+               
+               
+               
+               
+ echo "New record created successfully";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "<br>" . $e->getMessage();
+    }     
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
                
                
                
@@ -62,6 +145,25 @@ catch(PDOException $e)
     {
     echo $sql . "<br>" . $e->getMessage();
     }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
      $_SESSION["messageReg12"] ="added";
             echo $_SESSION["messageReg12"];    
 }
