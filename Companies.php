@@ -117,13 +117,12 @@ $result = $conn->query($sql);
                 <table id="myTable" style="width:100%">
                     <tr class="rowhead">
                         <th class="colhead">Company Name</th>
-
                         <th class="colhead">Contact Person</th>
                         <th class="colhead">website</th>
                         <th class="colhead">Description</th>
                         <th class="colhead">Tier rate</th>
                         <th class="colhead">notes</th>
-                          <th class="colhead">companies focus</th>
+                        <th class="colhead">companies focus</th>
                         <th class="colhead"></th>
                     </tr>
 
@@ -142,20 +141,20 @@ $result = $conn->query($sql);
 
 
 
-                    <tr>
-                        <td><?php echo $row["company_name"];?>
+                    <tr  class="info-row">
+                        <td class="colhead1"><?php echo $row["company_name"];?>
                         </td>
-                        <td>
+                        <td class="colhead1">
                             <?php echo $row["contact_person"];?></td>
-                        <td>
+                        <td class="colhead1">
                             <?php echo $row["website"];?></td>
-                        <td>
+                        <td class="colhead1">
                             <?php echo $row["description"];?></td>
-                        <td>
+                        <td class="colhead1">
                             <?php echo $row["tier_rate"];?></td>
-                        <td>
+                        <td class="colhead1">
                             <?php echo $row["notes"];?></td>
-                        <td>
+                        <td class="colhead1">
                             <?php echo $row["TypeOfCompany"];?></td>
 
                         <td>

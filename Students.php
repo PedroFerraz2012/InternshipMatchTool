@@ -19,7 +19,6 @@ if ($conn->connect_error) {
 $sql = "SELECT s_id,first_name,last_name,dob,email,notes,student_id FROM students";
 $result = $conn->query($sql);
     
-     
         
 }
     catch(PDOException $e){
@@ -29,10 +28,6 @@ $result = $conn->query($sql);
  else {
     echo "0 results";
 }
-
-    
-
-
 
 
 ?>
@@ -87,7 +82,6 @@ $result = $conn->query($sql);
                 <table id="myTable" style="width:100%">
                     <tr class="rowhead">
                         <th class="colhead">Fist name</th>
-
                         <th class="colhead">Last name</th>
                         <th class="colhead">dob</th>
                         <th class="colhead">Email</th>
