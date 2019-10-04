@@ -146,7 +146,7 @@ echo "</select>";
 </td> </tr> </table>
 <!-- another row-->
                     <h6>Notes</h6>
-  <input id="t3_notes" type="text" name="Notes" Placeholder="Notes"  rows="5">
+  <textarea id="t3_notes" type="text" name="Notes" Placeholder="Notes"></textarea>
      <br><br>
   <input type="submit" value="Add New Company"  
         >
