@@ -10,9 +10,19 @@ body{
 /*
 trying to change border color from a row, when btn is hover
 */
-.infoBtn:hover > .info-row {
+#infoBtn:hover > .info-row {
         border-color: orange;
     }
+
+    td:focus::after,
+    th:focus::after{
+        border-color: orange;
+    }
+    td:focus::after,
+    th:focus::after{
+        border-color: #E6E7E8;
+    }
+
 
 /*
     .footer-communication{
@@ -21,6 +31,10 @@ trying to change border color from a row, when btn is hover
         
     }
     */
+
+    h6{
+        margin-top:10px;
+    }
 
     .row.content {height: 450px}
     
@@ -224,14 +238,29 @@ max-height: 45px;
     border-color: #BDBFC1;
     border-width: 2px;
     padding-left: 5px;
+    
 }
 
-.colhead1{
+.colhead1, .colhead2{
     text-align: center;
     border-style: solid;
     border-color: #E6E7E8;
     border-width: 5px;
-   
+}
+
+#username, #t2, #t3, .select_new_add{
+    text-align: center;
+    width:100%;
+    border:0;
+}
+#t3_notes{
+    text-align: left;
+    width:100%;
+    border:0;
+    padding: 5px;
+    height: 100px;
+    text-align: start;
+    vertical-align: text-top;
 }
 
  tr:nth-child(even) .colhead1{

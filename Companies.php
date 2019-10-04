@@ -161,7 +161,7 @@ $result = $conn->query($sql);
                             <form action="Companies_details_ap.php" method=post>
                                 <input type="hidden" name="CompName" value="<?php echo $row["company_name"];?>">
                                 <input type="hidden" name="CompId" value="<?php echo $row["company_id"];?>">
-                                <input type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="20" height="20">
+                                <input type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="17" height="17">
 
                             </form>
                         </td>

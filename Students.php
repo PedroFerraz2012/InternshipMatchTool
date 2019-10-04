@@ -127,7 +127,7 @@ $result = $conn->query($sql);
 
 
                                 <input class="infoBtn" type="image" src=".\images\info-circle-solid.svg" alt="submit"
-                                    fill="orange" value="More details" width="20" height="20">
+                                    fill="orange" value="More details" width="17" height="17">
 
                             </form>
                         </td>

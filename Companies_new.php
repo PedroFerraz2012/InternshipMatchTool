@@ -76,26 +76,38 @@ $result = $conn->query($sql);
         
     </div>
     <div class="col-sm-10 text-left content"> 
+
+    <table id="myTable" style="width:100%">
+                    <tr class="rowhead">
+                        <th class="colhead">Company Name</th>
+                        <th class="colhead">Contact Person</th>
+                        <th class="colhead">Website</th>
+                        <th class="colhead">Description</th>
+                        <th class="colhead">Tier rate</th>
+                        <th class="colhead">Company type</th>
+                        
+                    </tr>
       <form action="Companies_new_ap.php" method=post>
-  Company Name:<br>
+      <tr  class="info-row">
+                        <td class="colhead2">
   <input id="username" type="text" name="CompanyName" Placeholder="Company Name">
-  <br>
-  Contact Person:<br>
+  </td>
+                        <td class="colhead2">
   <input id="t2" type="text" name="ContactPerson" Placeholder="Contact Person">
-         <br>
-          Website:<br>
+  </td>
+                        <td class="colhead2">
   <input id="t3" type="text" name="Website" Placeholder="Website">
-     <br><br>
-           Description:<br>
+  </td>
+                        <td class="colhead2">
   <input id="t3" type="text" name="Description" Placeholder="Description">
-      <br>
-          Tier rate:<br>
+  </td>
+                        <td class="colhead2">
           
           
       
                     <?php
           
-echo "<select name='TierRate'>";
+echo "<select class='select_new_add' name='TierRate'>";
     
     $sql = "SELECT companyTier FROM companytierrate";
 $result = $conn->query($sql);
@@ -110,17 +122,14 @@ echo "</select>";
 
                     <?php ?>
 
-     <br><br>
-          
-          
-           <br>
-          Company Type:<br>
+                    </td>
+                        <td class="colhead2">
           
           
       
                     <?php
           
-echo "<select name='CompanyType'>";
+echo "<select class='select_new_add' name='CompanyType'>";
     
     $sql = "SELECT  DISTINCT(courseType) FROM courses";
 $result = $conn->query($sql);
@@ -134,12 +143,10 @@ echo "</select>";
          ?>
 
                     <?php ?>
-
-     <br><br>
-          
-          
-          Notes :<br>
-  <input id="t3" type="text" name="Notes" Placeholder="Notes">
+</td> </tr> </table>
+<!-- another row-->
+                    <h6>Notes</h6>
+  <input id="t3_notes" type="text" name="Notes" Placeholder="Notes"  rows="5">
      <br><br>
   <input type="submit" value="Add New Company"  
         >
