@@ -105,6 +105,7 @@
                     </div>
 
                     <div class="modal-body">
+                    <div class="visevent">
                         <dl class="row">
 
                             <dt class="col-sm-3">Event Title: </dt>
@@ -122,6 +123,85 @@
                             <dt class="col-sm-3">Status</dt>
                             <dd class="col-sm-9" id="status"></dd>
                         </dl>
+                        <button class="btn btn-warning btn btn-canc-vis">Edit</button>
+                        </div>
+<!--form edit-->
+<div class="formedit">
+<span id="msg-edit"></span>
+                        <form id="editevent" method="POST" enctype="multipart/form-data">
+                        
+
+                                    <input type="hidden" name="id" id="id">
+                                
+                        
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Title</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="title" class="form-control" id="title"
+                                        placeholder="Event Title">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">To</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="to_whom" class="form-control" id="to_whom"
+                                        placeholder="to whom?">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Color</label>
+                                <div class="col-sm-10">
+                                    <select name="color" class="form-control" id="color">
+                                        <option value="">Select Colour</option>
+                                        <option style="background:#FFD700;" value="#FFD700">Yellow</option>
+                                        <option style="background:#0071c5;" value="#0071c5">Blue</option>
+                                        <option style="background:#FF4500;" value="#FF4500">Orange</option>
+                                        <option style="background:#A020F0;" value="#A020F0">Purple</option>
+                                        <option style="background:#228B22;" value="#228B22">Green</option>
+                                        <option style="background:#8B0000;" value="#8B0000">Red</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Date: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="start" class="form-control" id="start"
+                                        onkeypress="DataHora(event, this)">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Remind in </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="remind_date" class="form-control" id="remind_date"
+                                        placeholder="(days)">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Content </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="content" class="form-control" id="content"
+                                        placeholder="Message">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Status</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="status" class="form-control" id="status">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                <button type="button" class="btn btn-primary btn btn-canc-edit">Cancel</button>
+                                    <button type="submit" name="CadEvent" id="CadEvent" value="CadEvent"
+                                        class="btn btn-success">Update</button>
+                                </div>
+                            </div>
+                        </form>
+
+
+</div>
+
                     </div>
                 </div>
             </div>

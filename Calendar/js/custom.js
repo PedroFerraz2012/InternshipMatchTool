@@ -20,14 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         eventClick: function (info) {
             info.jsEvent.preventDefault(); // don't let the browser navigate
-
+console.log(info.event);
             // will show in modal details
             $('#view #id').text(info.event.id); //message_type
+            $('#view #id').val(info.event.id);
             $('#view #title').text(info.event.title); //message_type
+            $('#view #title').val(info.event.title);
             $('#view #to_whom').text(info.event.extendedProps.to_whom);
+            $('#view #to_whom').val(info.event.extendedProps.to_whom);
             $('#view #start').text(info.event.start.toLocaleString());
+            $('#view #start').val(info.event.start.toLocaleString());
             $('#view #content').text(info.event.extendedProps.content); // this is gonna be editable // info.event.content
+            $('#view #content').val(info.event.extendedProps.content);
             $('#view #status').text(info.event.extendedProps.status); // this is gonna be editable //
+            $('#view #status').val(info.event.extendedProps.status);
+            $('#view #color').val(info.event.backgroundColor);
             $('#view').modal('show');
         },
         selectable: true, //make the day box selectable
@@ -96,4 +103,35 @@ $(document).ready(function () {
             }
         })
     });
+
+$('.btn-canc-vis').on("click", function(){
+    $('.visevent').slideToggle();
+    $('.formedit').slideToggle();
+});
+
+$('.btn-canc-edit').on("click", function(){
+    $('.formedit').slideToggle();
+    $('.visevent').slideToggle();
+});
+
+$("#editevent").on("submit", function (event) {
+    event.preventDefault(); //to pause the modal, not closing on click
+   $.ajax({
+        method: "POST",
+        url: "./Calendar/edit_event.php",
+        data: new FormData(this), //getting data, instantiating
+        //avoiding errors
+        contentType: false,
+        processData: false,
+        success: function (retorna) { //case success or not, returns to calendar or alert
+            if (retorna['sit']) {
+                //$("#msg-edit").html(retorna['msg']);
+                location.reload(); //reloads the page
+            } else {
+                $("#msg-edit").html(retorna['msg']);
+            }
+        }
+    })
+});
+
 });
