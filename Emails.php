@@ -107,6 +107,8 @@
                     <div class="modal-body">
                     <div class="visevent">
                         <dl class="row">
+                        <dt class="col-sm-3">ID do Evento</dt>
+                                <dd id="id" class="col-sm-9"></dd>
 
                             <dt class="col-sm-3">Event Title: </dt>
                             <dd class="col-sm-9" id="title"></dd>
@@ -123,13 +125,15 @@
                             <dt class="col-sm-3">Status</dt>
                             <dd class="col-sm-9" id="status"></dd>
                         </dl>
+                        <a href="" id="del_evento" class="btn btn-danger" role="button">Apagar</a>
+                        
                         <button class="btn btn-warning btn btn-canc-vis">Edit</button>
                         </div>
 <!--form edit-->
 <div class="formedit">
 <span id="msg-edit"></span>
+<h6>EDITING</h6>
                         <form id="editevent" method="POST" enctype="multipart/form-data">
-                        
 
                                     <input type="hidden" name="id" id="id">
                                 

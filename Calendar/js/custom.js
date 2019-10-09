@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         editable: true,
         eventLimit: true, // allows "more" link when too many events
         events: './Calendar/list_events.php',
-        
+        cache: true,
         //cache
         extraParams: function () {
             return {
@@ -20,7 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         eventClick: function (info) {
             info.jsEvent.preventDefault(); // don't let the browser navigate
-console.log(info.event);
+            
+            $("#del_evento").attr("href", "./Calendar/delete_event.php?id=" + info.event.id);
+            console.log(info.event.id);
+            console.log("href", "./Calendar/delete_event.php?id=" + info.event.id);
             // will show in modal details
             $('#view #id').text(info.event.id); //message_type
             $('#view #id').val(info.event.id);
@@ -38,6 +41,7 @@ console.log(info.event);
             $('#view').modal('show');
         },
         selectable: true, //make the day box selectable
+        selectHelper: true,
         select: function (info) {
             //alert('Event start: ' + info.start.toLocaleString());
             $('#cadastrar #start').val(info.start.toLocaleString());
@@ -118,7 +122,7 @@ $("#editevent").on("submit", function (event) {
     event.preventDefault(); //to pause the modal, not closing on click
    $.ajax({
         method: "POST",
-        url: "./Calendar/edit_event.php",
+        url: "./Calendar/edit_event.php?id="+info.event.id,
         data: new FormData(this), //getting data, instantiating
         //avoiding errors
         contentType: false,

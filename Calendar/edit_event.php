@@ -12,11 +12,9 @@ $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 $data_start = str_replace('/', '-', $dados['start']);
 $data_start_conv = date("Y-m-d H:i:s", strtotime($data_start));
 
-//$status = 'ToDo';
-
 //preparing query to save in the db, using links for values
 
-$query_event = "UPDATE messages SET message_type=:message_type, color=:color, date=:date, to_whom=:to_whom, content=:content, remind_date=:remind_date, status=:status WHERE id=:id";
+$query_event = "UPDATE messages SET message_type=:message_type, color=:color, date=:date, to_whom=:to_whom, content=:content, remind_date=:remind_date, status=:status WHERE message_id=:id";
 //preparing connection and query
 $update_event = $conn2->prepare($query_event);
 //getting values to link in the variable
