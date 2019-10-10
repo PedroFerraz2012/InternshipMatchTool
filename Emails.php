@@ -4,17 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--head>
-  OK <title>Internship Match Tool</title>
-  OK <meta charset="utf-8">
-  OK <meta name="viewport" content="width=device-width, initial-scale=1">
- OK <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon"/>
-  <link rel="stylesheet" type="text/css" href="Styles.css">
-</head-->
-
     <head>
         <title>Internship Match Tool</title>
         <meta charset="utf-8">
@@ -28,23 +17,18 @@
         <!--FullCalendar css-->
         <link href='Calendar/css/core/main.min.css' rel='stylesheet' />
         <link href='Calendar/css/daygrid/main.min.css' rel='stylesheet' />
-        <!-- css bootstrap for modal-->
-        <!--desabling this for while-->
-        
 
-        <!-- my css for calendar: custom.css CHECKED NOT CONFLICTING-->
+        <!-- my css for calendar-->
         <link rel="stylesheet" href="Calendar/css/custom.css">
+
         <!--FullCalendar js-->
         <script src='./Calendar/js/core/main.min.js'></script>
         <script src='./Calendar/js/interaction/main.min.js'></script>
         <script src='./Calendar/js/daygrid/main.min.js'></script>
         <script src='./Calendar/js/core/locales/en-au.js'></script>
-
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
         <!-- js bootstrap for modal-->
-        <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="./Calendar/js/custom.js"></script>
 
@@ -84,11 +68,7 @@
             </div>
         </div>
 
-        <footer class="footer-communication">
-            <div class="container text-center">
-                <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
-            </div>
-        </footer>
+        
 
         <!--MODALS-->
 
@@ -107,7 +87,7 @@
                     <div class="modal-body">
                     <div class="visevent">
                         <dl class="row">
-                        <dt class="col-sm-3">ID do Evento</dt>
+                        <dt class="col-sm-3">Event ID</dt>
                                 <dd id="id" class="col-sm-9"></dd>
 
                             <dt class="col-sm-3">Event Title: </dt>
@@ -125,9 +105,11 @@
                             <dt class="col-sm-3">Status</dt>
                             <dd class="col-sm-9" id="status"></dd>
                         </dl>
-                        <a href="" id="del_evento" class="btn btn-danger" role="button">Apagar</a>
+                        <a href="" id="del_evento" class="btn btn-danger" role="button">Delete</a>
                         
                         <button class="btn btn-warning btn btn-canc-vis">Edit</button>
+                        
+                        <a href="" id="btn-send-msg" class="btn btn-success" role="button">Send this message</a>
                         </div>
 <!--form edit-->
 <div class="formedit">
@@ -176,7 +158,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Remind in </label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="remind_date" class="form-control" id="remind_date"
+                                    <input type="number" name="remind_date" class="form-control" id="remind_date"
                                         placeholder="(days)">
                                 </div>
                             </div>
@@ -287,7 +269,6 @@
                 </div>
             </div>
         </div>
-
 
 
     </body>

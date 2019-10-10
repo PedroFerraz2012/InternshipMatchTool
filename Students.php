@@ -119,7 +119,7 @@ $result = $conn->query($sql);
                             <?php echo $row["notes"];?></td>
                         <td class="colhead1">
                             <?php echo $row["student_id"];?></td>
-<td class="colhead1">
+                        <td class="colhead1">
                             <?php echo $row["courses"];?></td>
                         <td>
                             <form action="Students_details_ap.php" method=post>
