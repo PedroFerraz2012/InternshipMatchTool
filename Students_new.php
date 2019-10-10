@@ -92,7 +92,7 @@ $result = $conn->query($sql);
                 <form action="Students_new_ap.php" method=post>
                 <tr class="info-row">
                             <td class="colhead2">
-                    <input id="FirstName" type="text" name="FirstName" Placeholder="First Name">
+                    <input id="t2" type="text" name="FirstName" Placeholder="First Name">
                     </td>
                             <td class="colhead2">
                     <input id="t2" type="text" name="LastName" Placeholder="Last Name">
@@ -106,7 +106,7 @@ $result = $conn->query($sql);
 
                     <?php
           
-echo "<select name='CourseSel'>";
+echo "<select  id='mySelect' name='CourseSel'>";
     
     $sql = "SELECT courseId,courseName,schoolName,courseType FROM courses";
 $result = $conn->query($sql);
