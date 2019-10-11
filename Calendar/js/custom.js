@@ -122,7 +122,7 @@ $("#editevent").on("submit", function (event) {
     event.preventDefault(); //to pause the modal, not closing on click
    $.ajax({
         method: "POST",
-        url: "./Calendar/edit_event.php?id="+info.event.id,
+        url: "./Calendar/edit_event.php?id="+event.id,
         data: new FormData(this), //getting data, instantiating
         //avoiding errors
         contentType: false,
