@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -42,68 +43,67 @@ $result = $conn->query($sql);
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <title>Internship Match Tool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" type="text/css" href="Styles.css">
+</head>
 
-    <head>
-        <title>Internship Match Tool</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="Styles.css">
-    </head>
-
-    <?php include('navigation.php'); ?>
-
-    <div class="container-fluid text-center">
-        <div class="row content">
-            <div class="col-sm-2 sidenav">
-                <a class="text" href="Students.php">
-                    <div class="well2">
-                        <p class="t2">Students List</p>
-                    </div>
-                </a>
-                <a class="text">
-                    <div class="well1">
-                        <p class="t2">Students Details</p>
-                    </div>
-                </a>
-
-                <a class="text" href="Students_new.php">
-                    <div class="well2">
-                        <p class="t2">New Student</p>
-                    </div>
-                </a>
-
-            </div>
-            <div class="col-sm-10 text-left content">
-
-
-                <?php 
+<?php include('navigation.php'); ?>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <a class="text" href="Students.php" >
+        <div class="well2">
+     <p class="t2">Students List</p>
+      </div>
+       </a> 
+        <a class="text">
+        <div class="well1">
+     <p class="t2">Students Details</p>
+      </div>
+       </a> 
+        
+          <a class="text" href="Students_new.php">
+        <div class="well2">
+     <p class="t2">New Student</p>
+      </div>
+       </a> 
+        
+    </div>
+    <div class="col-sm-10 text-left content"> 
+        
+        
+        <?php 
         
            if(isset($_SESSION["stuId"])){
         
         ?>
-
-
-
-                <table id="myTable" style="width:100%">
-                    <tr class="rowhead">
-                        <th class="colhead">first name</th>
-
-                        <th class="colhead">last name</th>
-                        <th class="colhead">dob</th>
-                        <th class="colhead">email</th>
-                        <th class="colhead">notes</th>
-                        <th class="colhead">student id</th>
-
-                    </tr>
-
-
-
-
-                    <?php 
+        
+        
+        
+      <table id="myTable" style="width:100%">
+  <tr class="rowhead">
+   <th class="colhead">first name</th>
+    
+    <th class="colhead">last name</th>
+     <th class="colhead">dob</th>    
+                <th class="colhead">email</th>
+                    <th class="colhead">notes</th>
+                 <th class="colhead">student id</th>
+      
+  </tr>
+  
+    
+    
+    
+     <?php 
 
          
           
@@ -118,11 +118,11 @@ $result = $conn->query($sql);
         if($row["s_id"]== $session12){
            
          ?>
-
-
-
-
-                     <tr>
+            
+            
+            
+            
+            <tr>
            <td ><?php echo $row["first_name"];?>
                </td>
              <td>
@@ -139,81 +139,102 @@ $result = $conn->query($sql);
                
             
             </tr>
-
-
-
-
-                    <?php }}?>
-
-
-                </table>
-
-                <h6>Vacancies</h6>
-                <table id="myTable" style="width:100%">
-                    <tr class="rowhead">
-
-
-                        <th class="colhead">Vacancy name</th>
-                        <th class="colhead">salary</th>
-                        <th class="colhead">vacancy status</th>
-
-
-                    </tr>
-
-
-
-
-                    <?php 
+            
+            
+            
+  
+        <?php }}?>
+    
  
-         $session13=$_SESSION["CompId"];
+</table>
+        
+         <h2>Tech stack</h2>
+         <table id="myTable" style="width:100%">
+  <tr class="rowhead">
+   
+    
+    <th class="colhead">Tech skill</th>
+     <th class="colhead">Coding Ability</th>    
+                <th class="colhead">Social ability</th>
+      <th class="colhead">Punctuality_Reliability</th>
+        <th class="colhead">Team Dynamics</th>
+      <th class="colhead">Job Ready Professionalism</th>
+      <th class="colhead">Hardworking</th>
+      
+  </tr>
+  
+    
+    
+    
+     <?php 
+ 
+       $session12=$_SESSION["stuId"];
              
-    $sql = "SELECT * FROM vacancies";
+    $sql = "SELECT * FROM student_assets";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
-        if($row["company_id"]== $session13){
+        if($row["student_id"]== $session12){
            
          ?>
-
-
-
-
-                    <tr>
-                        <td><?php echo $row["vacancy_name"];?>
-                        </td>
-                        <td>
-                            <?php echo $row["salary"];?></td>
-                        <td>
-                            <?php echo $row["vacancy_status"];?></td>
-
-
-
-
-                    </tr>
-
-
-
-
-                    <?php }} ?>
-
-
-                </table>
-
-                <h6>Enrollments</h6>
-                <table id="myTable" style="width:100%">
-                    <tr class="rowhead">
-
-
-                        <th class="colhead">Start date</th>
-                        <th class="colhead">end date</th>
-                        <th class="colhead">student id</th>
-                        <th class="colhead">status</th>
-
-                    </tr>
-
-
-
-
-                    <?php 
+            
+            
+            
+            
+            <tr>
+                <form action="Students_details_edit_ap.php" method=post>
+           <td ><input type="number" name="tech_skill" value="<?php echo $row["tech_skill"];?>">            
+               </td>
+                    <td ><input type="number" name="coding_ability" value="<?php echo $row["coding_ability"];?>">            
+               </td>
+                
+                 <td ><input type="number" name="social_ability" value="<?php echo $row["social_ability"];?>"> 
+                    
+               </td>
+                
+             <td><input type="number" name="punctuality_reliability" value="<?php echo $row["punctuality_reliability"];?>">
+          </td>   
+                 <td><input type="number" name="team_dynamics" value="<?php echo $row["team_dynamics"];?>">
+         </td> 
+                    
+          <td><input type="number" name="job_ready_professionalism" value="<?php echo $row["job_ready_professionalism"];?>">
+          </td>
+                    
+                  <td><input type="number" name="hardworking" value="<?php echo $row["hardworking"];?>">
+          </td>
+               
+                    
+                    
+                    <td><input type="submit" value="Edit Ts"  
+        ></td>
+                    
+                    
+            </form>
+            </tr>
+            
+            
+            
+  
+        <?php }} ?>
+    
+ 
+</table>
+        
+        <h2>Enrollments</h2>
+         <table id="myTable" style="width:100%">
+  <tr class="rowhead">
+   
+    
+    <th class="colhead">Start date</th>
+     <th class="colhead">end date</th>    
+                <th class="colhead">student id</th>
+                  <th class="colhead">status</th>
+      
+  </tr>
+  
+    
+    
+    
+     <?php 
  
          $session14= $_SESSION["CompName"];
              
@@ -223,32 +244,32 @@ $result = $conn->query($sql);
         if($row["company_name"]== $session14){
            
          ?>
-
-
-
-
-                    <tr>
-                        <td><?php echo $row["start_date"];?>
-                        </td>
-                        <td>
-                            <?php echo $row["end_date"];?></td>
-                        <td>
-                            <?php echo $row["student_id"];?></td>
-                        <td>
-                            <?php echo $row["status"];?></td>
-
-
-
-                    </tr>
-
-
-
-
-                    <?php }} ?>
-
-
-                </table>
-                <?php }
+            
+            
+            
+            
+            <tr>
+           <td ><?php echo $row["start_date"];?>
+               </td>
+             <td>
+          <?php echo $row["end_date"];?></td>   
+                 <td>
+          <?php echo $row["student_id"];?></td> 
+             <td>
+          <?php echo $row["status"];?></td> 
+        
+               
+            
+            </tr>
+            
+            
+            
+  
+        <?php }} ?>
+    
+ 
+</table>
+        <?php }
           else{
               
               
@@ -259,19 +280,18 @@ $result = $conn->query($sql);
           
           
           ?>
-
-
-            </div>
-
-        </div>
+        
+        
     </div>
+    
+  </div>
+</div>
 
-    <footer id="sticky-footer" class="footer12">
-        <div class="container text-center">
-            <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
-        </div>
-    </footer>
+ <footer id="sticky-footer" class="footer12">
+    <div class="container text-center">
+     <P>By Pedro Ferraz 6008 and Jayme Schmid 6290</P>
+    </div>
+  </footer>
 
-    </body>
-
+</body>
 </html>
