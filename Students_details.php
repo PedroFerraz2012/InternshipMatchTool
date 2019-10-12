@@ -122,23 +122,23 @@ $result = $conn->query($sql);
 
 
 
-                    <tr class="info-row">
-                        <td class="colhead1"><?php echo $row["first_name"];?>
-                        </td>
-                        <td class="colhead1">
-                            <?php echo $row["last_name"];?></td>
-                        <td class="colhead1">
-                            <?php echo $row["dob"];?></td>
-                        <td class="colhead1">
-                            <?php echo $row["email"];?></td>
-                        <td class="colhead1">
-                            <?php echo $row["notes"];?></td>
-                        <td class="colhead1">
-                            <?php echo $row["student_id"];?></td>
-
-
-
-                    </tr>
+                     <tr>
+           <td ><?php echo $row["first_name"];?>
+               </td>
+             <td>
+          <?php echo $row["last_name"];?></td>   
+                 <td>
+          <?php echo $row["dob"];?></td> 
+              <td>
+          <?php echo $row["email"];?></td>   
+        <td>
+          <?php echo $row["notes"];?></td>
+                 <td>
+          <?php echo $row["student_id"];?></td>
+        
+               
+            
+            </tr>
 
 
 
