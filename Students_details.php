@@ -236,12 +236,12 @@ $result = $conn->query($sql);
     
      <?php 
  
-         $session14= $_SESSION["CompName"];
+         $session14= $_SESSION["stuId"];
              
     $sql = "SELECT * FROM enrollment";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
-        if($row["company_name"]== $session14){
+        if($row["student_id"]== $session14){
            
          ?>
             
