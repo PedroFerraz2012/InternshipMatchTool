@@ -64,7 +64,7 @@ $result = $conn->query($sql);
                         <p class="t2">Student Match</p>
                     </div>
                 </a>
-                <a class="text" href="Students_details.php">
+                <a class="text" href="StudentMatch_companies.php">
                     <div class="well2">
                         <p class="t2">Companies Match </p>
                     </div>
@@ -119,17 +119,17 @@ $result = $conn->query($sql);
             
             
             <tr>
-           <td ><?php echo $row["first_name"];?>
+           <td class="colhead1"><?php echo $row["first_name"];?>
                </td>
-             <td>
+             <td class="colhead1">
           <?php echo $row["last_name"];?></td>   
-                 <td>
+                 <td class="colhead1">
           <?php echo $row["dob"];?></td> 
-              <td>
+              <td class="colhead1">
           <?php echo $row["email"];?></td>   
-        <td>
+        <td class="colhead1">
           <?php echo $row["notes"];?></td>
-                 <td>
+                 <td class="colhead1">
           <?php echo $row["student_id"];?></td>
         <?php
                 
@@ -185,29 +185,29 @@ $result = $conn->query($sql);
             
             <tr>
                 <form action="Students_details_edit_ap.php" method=post>
-           <td ><?php echo $row["tech_skill"];?>            
+           <td class="colhead1"><?php echo $row["tech_skill"];?>            
                </td>
-                    <td ><?php echo $row["coding_ability"];?>            
+                    <td class="colhead1"><?php echo $row["coding_ability"];?>            
                </td>
                 
-                 <td ><?php echo $row["social_ability"];?> 
+                 <td class="colhead1"><?php echo $row["social_ability"];?> 
                     
                </td>
                 
-             <td><?php echo $row["punctuality_reliability"];?>
+             <td class="colhead1"><?php echo $row["punctuality_reliability"];?>
           </td>   
-                 <td><?php echo $row["team_dynamics"];?>
+                 <td class="colhead1"><?php echo $row["team_dynamics"];?>
          </td> 
                     
-          <td><?php echo $row["job_ready_professionalism"];?>
+          <td class="colhead1"><?php echo $row["job_ready_professionalism"];?>
           </td>
                     
-                  <td><?php echo $row["hardworking"];?>
+                  <td class="colhead1"><?php echo $row["hardworking"];?>
           </td>
                
                     <?php  $combinedscore=$row["hardworking"]+$row["job_ready_professionalism"]+$row["team_dynamics"]+$row["punctuality_reliability"]+$row["social_ability"]+$row["coding_ability"]+$row["tech_skill"] ?>
                     
-                    <td><?php echo ($combinedscore);?>
+                    <td class="colhead1"><?php echo ($combinedscore);?>
           </td>
                     
                     

@@ -56,7 +56,7 @@ $result = $conn->query($sql);
                         <p class="t2">Student Match</p>
                     </div>
                 </a>
-                <a class="text" href="Students_details.php">
+                <a class="text" href="StudentMatch_companies.php">
                     <div class="well2">
                         <p class="t2">Companies Match </p>
                     </div>
