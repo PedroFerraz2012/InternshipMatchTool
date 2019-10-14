@@ -97,7 +97,8 @@ $result = $conn->query($sql);
                 <th class="colhead">email</th>
                     <th class="colhead">notes</th>
                  <th class="colhead">student id</th>
-      
+        <th class="colhead">Course</th>
+       <th class="colhead">Skills</th>
   </tr>
   
     
@@ -112,7 +113,7 @@ $result = $conn->query($sql);
        
           
                 $session12=$_SESSION["stuId"];
-    $sql = "SELECT s_id,first_name,last_name,dob,email,notes,student_id FROM students";
+    $sql = "SELECT * FROM students";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         if($row["s_id"]== $session12){
@@ -123,19 +124,22 @@ $result = $conn->query($sql);
             
             
             <tr>
-           <td ><?php echo $row["first_name"];?>
+           <td class="colhead1"><?php echo $row["first_name"];?>
                </td>
-             <td>
+             <td class="colhead1">
           <?php echo $row["last_name"];?></td>   
-                 <td>
+                 <td class="colhead1">
           <?php echo $row["dob"];?></td> 
-              <td>
+              <td class="colhead1">
           <?php echo $row["email"];?></td>   
-        <td>
+        <td class="colhead1">
           <?php echo $row["notes"];?></td>
-                 <td>
+                 <td class="colhead1">
           <?php echo $row["student_id"];?></td>
-        
+                <td class="colhead1">
+          <?php echo $row["courses"];?></td>
+        <td class="colhead1">
+          <?php echo $row["Skill"];?></td>
                
             
             </tr>

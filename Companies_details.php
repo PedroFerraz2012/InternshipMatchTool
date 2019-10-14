@@ -94,7 +94,8 @@ $result = $conn->query($sql);
                         <th class="colhead">Description</th>
                         <th class="colhead">Tier rate</th>
                         <th class="colhead">notes</th>
-
+                         <th class="colhead">company type</th>
+<th class="colhead"> focus</th>
                     </tr>
 
 
@@ -103,7 +104,7 @@ $result = $conn->query($sql);
                     <?php 
   $session12=$_SESSION["CompId"];
          
-    $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes FROM company";
+    $sql = "SELECT * FROM company";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         if($row["company_id"]== $session12){
@@ -128,6 +129,10 @@ $result = $conn->query($sql);
                             <?php echo $row["tier_rate"];?></td>
                         <td class="colhead1">
                             <?php echo $row["notes"];?></td>
+                                                <td class="colhead1">
+                            <?php echo $row["TypeOfCompany"];?></td>
+                        <td class="colhead1">
+                            <?php echo $row["Focus"];?></td>
 
                     </tr>
 
