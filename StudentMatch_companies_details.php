@@ -108,7 +108,10 @@ $result = $conn->query($sql);
 
                     <tr class="info-row">
                         <td class="colhead1">
-                            <?php echo $row["company_name"];?>
+                            <?php echo $row["company_name"];
+                            $compName=$row["company_name"]
+                            
+                            ?>
                         </td>
 
                         <td class="colhead1">
@@ -241,17 +244,29 @@ if($Sel==true){
                         <td class="colhead1">
                             <?php echo $row["notes"];?></td>
                         <td class="colhead1">
-                            <?php echo $row["student_id"];?></td>
+                            <?php echo $row["student_id"];
+                            
+                            $stuid=$row["student_id"];
+                            
+                            ?></td>
                         <td class="colhead1">
                             <?php echo $row["courses"];?></td>
-                        <td><form action="StudentMatch_ap.php" method=post>
-                                <input type="hidden" name="stuId" value="<?php echo $row["s_id"];?>">
-
-
+                        <td> <form action="StudentMatch_companies_details_ap.php" method=post>
+                                 <td>
+                            <P> start date</P>
+                                <input id="t3" type="date" name="startD" Placeholder="dob">
+                                    
+                                  <td>
+<P> end date</P>
+                             <input id="t3" type="date" name="endD" Placeholder="dob">
+<input type="hidden" name="studentId" value="<?php echo  $stuid; ?>">
+   <input type="hidden" name="companyName" value="<?php echo  $compName; ?>">                            
+ </td>
+<td>
                                 <input class="infoBtn" type="submit"  alt="submit"
                                     fill="orange" value="enroll" width="17" height="17">
-
-                            </form></td>
+</td>
+                            </form>
                
                  
         
