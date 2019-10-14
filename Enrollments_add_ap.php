@@ -49,9 +49,8 @@ $test= false;
        
         
     
-           try{ $sql = "ALTER TABLE student_assets
-ADD ".$newTechStack." int;
-   ";
+           try{ $sql = "INSERT INTO techstack(skill_name)
+    VALUES ('".$newTechStack."')";
     // use exec() because no results are returned
     
                
@@ -76,7 +75,7 @@ catch(PDOException $e)
      $_SESSION["messageReg12"] ="added";
             echo $_SESSION["messageReg12"];    
 }
-
+header('Location: Enrollments.php');
 $conn->close();
 
 

@@ -96,12 +96,7 @@ $result = $conn->query($sql);
 
                     <?php 
     
-           $query = $conn->query("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'internshipdatabase' AND TABLE_NAME = 'student_assests'");
-
-while($row = $query->fetch_assoc()){
-    $result[] = $row;
-    echo $row['Field'];
-}
+          
            
            
            
@@ -116,11 +111,10 @@ while($row = $query->fetch_assoc()){
            
     $sql = "
 
-SHOW COLUMNS FROM student_assets";
+SELECT * FROM techstack";
 $result = $conn->query($sql);
-         
     while($row = $result->fetch_assoc()) {
-        if( $row['Field'] !="student_id"&& $row['Field'] !="asset_id"){
+        
             
          ?>
 
@@ -128,34 +122,25 @@ $result = $conn->query($sql);
 
 
                     <tr>
-                        <td><?php echo $row['Field'];?>
+                        <td class="colhead1"> <?php echo $row['skill_name'];?>
                         </td>
                         
 
                        
-                            <?php 
-            if( $row['Field'] !="tech_skill"&&$row['Field'] !="soft_skill"&&$row['Field'] !="coding_ability"&&$row['Field'] !="social_ability"&&$row['Field'] !="punctuality_reliability" &&$row['Field'] !="team_dynamics" &&$row['Field'] !="job_ready_professionalism" &&$row['Field'] !="hardworking" &&$row['Field'] !="qualifications" &&$row['Field'] !="qualification_rating" &&$row['Field'] !="work_experience" &&$row['Field'] !="work_ex_rating" &&$row['Field'] !="overall_asset_rating"                  ){
-                
-            
-                
-                
-            
-            
-            
-            ?>
+                          
                              <td>
                             
                             <form action="Enrollments_drop_ap.php" method=post>
                               
-                                <input type="hidden" name="FieldName" value="<?php echo $row['Field'];?>">
+                                <input type="hidden" name="FieldName" value="<?php echo $row['skill_name'];?>">
                                 <input type="submit" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="delete" width="20" height="20">
 
                             </form>
                         </td>
                         
-                        <?php
+                       
             
-            }?>
+            
 
                     </tr>
            
@@ -164,7 +149,7 @@ $result = $conn->query($sql);
 
 
 
-                    <?php }} ?>
+                    <?php } ?>
 
            <tr>
            <td>

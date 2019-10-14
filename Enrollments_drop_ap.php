@@ -49,9 +49,7 @@ $test= false;
        
         
     
-           try{ $sql = "ALTER TABLE student_assets
-DROP COLUMN  ".$DropField.";
-   ";
+           try{ $sql ="DELETE FROM techstack WHERE skill_name='".$DropField."';" ;
     // use exec() because no results are returned
     
                
@@ -76,7 +74,7 @@ catch(PDOException $e)
      $_SESSION["messageReg12"] ="added";
             echo $_SESSION["messageReg12"];    
 }
-
+header('Location: Enrollments.php');
 $conn->close();
 
 
