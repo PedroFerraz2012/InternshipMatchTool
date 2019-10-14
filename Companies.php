@@ -167,6 +167,24 @@ $result = $conn->query($sql);
                                 <input type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="17" height="17">
 
                             </form>
+                           
+                                
+                        </td>
+                        <td>
+                            
+                            <form action="Companies _drop.php" method=post>
+                                <input type="hidden" name="company_name" value="<?php echo $row["company_name"];?>">
+                                <input type="hidden" name="contact_person" value="<?php echo $row["contact_person"];?>">
+                                <input type="hidden" name="website" value="<?php echo $row["website"];?>">
+                                <input type="hidden" name="description" value="<?php echo $row["description"];?>">
+                                  <input type="hidden" name="tier_rate" value="<?php echo $row["tier_rate"];?>">
+                                <input type="hidden" name="notes" value="<?php echo $row["notes"];?>">
+                                <input type="hidden" name="TypeOfCompany" value="<?php echo $row["TypeOfCompany"];?>">
+                                <input type="hidden" name="Focus" value="<?php echo $row["Focus"];?>">
+                                <input type="submit" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="delete" width="17" height="17">
+
+                            </form>
+                                
                         </td>
 
                     </tr>
