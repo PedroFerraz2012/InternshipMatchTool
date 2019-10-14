@@ -133,6 +133,18 @@ $result = $conn->query($sql);
                                     fill="orange" value="More details" width="17" height="17">
 
                             </form>
+                            
+                        </td>
+                         <td>
+                           
+                            <form action="Students_drop.php" method=post>
+                                <input type="hidden" name="stuId" value="<?php echo $row["s_id"];?>">
+
+
+                               <input type="submit" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="delete" width="17" height="17">
+
+
+                            </form>
                         </td>
 
                     </tr>
