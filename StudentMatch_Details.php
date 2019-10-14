@@ -93,7 +93,8 @@ $result = $conn->query($sql);
                 <th class="colhead">email</th>
                     <th class="colhead">notes</th>
                  <th class="colhead">student id</th>
-      
+<th class="colhead">courses</th>
+      <th class="colhead">skills</th>
   </tr>
   
     
@@ -108,7 +109,7 @@ $result = $conn->query($sql);
        
           
                 $session12=$_SESSION["stuId"];
-    $sql = "SELECT s_id,first_name,last_name,dob,email,notes,student_id,courses FROM students";
+    $sql = "SELECT * FROM students";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         if($row["s_id"]== $session12){
@@ -133,6 +134,18 @@ $result = $conn->query($sql);
           <?php echo $row["student_id"];
                      
                      $stuid= $row["student_id"];
+                     
+                     ?></td>
+                <td class="colhead1">
+          <?php echo $row["courses"];
+                     
+                      $StuCourse = $row["courses"]; 
+                     
+                     ?></td>
+                <td class="colhead1">
+          <?php echo $row["Skill"];
+                     
+                     $skill= $row["Skill"];
                      
                      ?></td>
         <?php
@@ -328,11 +341,119 @@ $result = $conn->query($sql);
                
             
             </tr>
+             <?php }}}} ?>
+            
             
             
             
   
-        <?php }}}} ?>
+    
+ 
+</table>
+        <p>best match companies</p>
+        <table id="myTable" style="width:100%">
+  <tr class="rowhead">
+   
+    
+    <th class="colhead">Company Name</th>
+
+                        <th class="colhead">Contact Person</th>
+                        <th class="colhead">website</th>
+                        <th class="colhead">Description</th>
+                        <th class="colhead">Tier rate</th>
+                        <th class="colhead">notes</th>
+      
+  </tr>
+  
+    
+    
+    
+     <?php 
+  
+         $session14= $_SESSION["stuId"];
+             
+    $sql = "SELECT * FROM  companytierrate";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        if($row["companyMinimumRate"]<= $combinedscore && $combinedscore <=$row["companyMaximumRate"]){
+            $row12=$row["companyTier"];
+            
+          $sql1 = "SELECT * FROM  courses";
+$result1 = $conn->query($sql1);
+    while($row = $result1->fetch_assoc()) {
+        if($row["courseName"]== $StuCourse){
+            
+            
+            
+            $courseType=$row["courseType"];
+            
+           
+}}
+          $sql = "SELECT * FROM  company";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        if($row["tier_rate"]== $row12 && $row["TypeOfCompany"]==$courseType &&$row["Focus"]==$skill){   
+            
+            
+         ?>
+            
+            
+            
+            
+            <tr>
+                
+                
+                
+                
+                
+                
+                
+                
+           <td class="colhead1"><?php echo $row["company_name"];
+               
+               $compName=$row["company_name"];?>
+                        </td>
+                        <td class="colhead1">
+                            <?php echo $row["contact_person"];?></td>
+                        <td class="colhead1">
+                            <?php echo $row["website"];?></td>
+                        <td class="colhead1">
+                            <?php echo $row["description"];?></td>
+                        <td class="colhead1">
+                            <?php echo $row["tier_rate"];?></td>
+                        <td class="colhead1">
+                            <?php echo $row["notes"];?></td>
+                        
+                            
+                            
+                            <form action="StudentMatch_Details_ap.php" method=post>
+                                 <td>
+                            <P> start date</P>
+                                <input id="t3" type="date" name="startD" Placeholder="dob">
+                                    
+                                  <td>
+<P> end date</P>
+                             <input id="t3" type="date" name="endD" Placeholder="dob">
+<input type="hidden" name="studentId" value="<?php echo  $stuid; ?>">
+   <input type="hidden" name="companyName" value="<?php echo  $compName; ?>">                            
+ </td>
+<td>
+                                <input class="infoBtn" type="submit"  alt="submit"
+                                    fill="orange" value="enroll" width="17" height="17">
+</td>
+                            </form>
+               
+                 
+        
+               
+            
+            </tr>
+             <?php }}}} ?>
+            
+            
+            
+            
+  
     
  
 </table>
