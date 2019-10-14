@@ -81,10 +81,12 @@ $result = $conn->query($sql);
 
             <table id="myTable" style="width:100%">
                     <tr class="rowhead">
+                        
                         <th class="colhead">First Name</th>
                         <th class="colhead">Last Name</th>
                         <th class="colhead">DOB</th>
                         <th class="colhead">Course</th>
+                        <th class="colhead">Skill</th>
                         <th class="colhead">Email</th>
                         <th class="colhead">Student ID</th>
 
@@ -120,6 +122,31 @@ echo "</select>";
          ?>
 
                     <?php ?>
+                                
+
+                    </td>
+                    <td class="colhead2">
+
+
+
+                    <?php
+          
+echo "<select  id='mySelect' name='SkillSel'>";
+     echo "<option value=''></option>";
+    $sql = "SELECT * FROM techstack";
+$result = $conn->query($sql);
+                       
+    while($row = $result->fetch_assoc()) {
+        
+        
+    echo "<option value='" . $row['skill_name'] . "'>" . $row['skill_name'] . "</option>";
+}
+echo "</select>";
+         
+         ?>
+
+                    <?php ?>
+                                
 
                     </td>
                             <td class="colhead2">

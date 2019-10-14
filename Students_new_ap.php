@@ -37,10 +37,12 @@ $test= false;
       $Email= $_POST["Email"];
         $Notes= $_POST["Notes"];
       $Studentid= $_POST["Studentid"];
+          $SkillSel= $_POST["SkillSel"];
+       
         
     
-           try{ $sql = "INSERT INTO students(first_name, last_name, dob,email,notes,student_id,courses)
-    VALUES ('".$FirstName."', '".$LastName."', '".$dob."', '".$Email."', '".$Notes."', '".$Studentid."', '".$Courses."')";
+           try{ $sql = "INSERT INTO students(first_name, last_name, dob,email,notes,student_id,courses,skill)
+    VALUES ('".$FirstName."', '".$LastName."', '".$dob."', '".$Email."', '".$Notes."', '".$Studentid."', '".$Courses."', '".$SkillSel."')";
     // use exec() because no results are returned
     
                

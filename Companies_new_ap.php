@@ -37,10 +37,11 @@ $test= false;
       $Description= $_POST["Description"];
         $TierRate= $_POST["TierRate"];
       $Notes= $_POST["Notes"];
+        $SkillSel= $_POST["SkillSel"];
         
     
-           try{ $sql = "INSERT INTO company (company_name, contact_person, website,description,tier_rate,notes,TypeOfCompany)
-    VALUES ('".$CompanyName."', '".$ContactPerson."', '".$Website."', '".$Description."', '".$TierRate."', '".$Notes."', '".$CompanyType."')";
+           try{ $sql = "INSERT INTO company (company_name, contact_person, website,description,tier_rate,notes,TypeOfCompany,Focus)
+    VALUES ('".$CompanyName."', '".$ContactPerson."', '".$Website."', '".$Description."', '".$TierRate."', '".$Notes."', '".$CompanyType."', '".$SkillSel."')";
     // use exec() because no results are returned
     
                

@@ -86,7 +86,7 @@ $result = $conn->query($sql);
                         <th class="colhead">Description</th>
                         <th class="colhead">Tier rate</th>
                         <th class="colhead">Company type</th>
-
+<th class="colhead">Company focus</th>
                     </tr>
                     <form action="Companies_new_ap.php" method=post>
                         <tr class="info-row">
@@ -145,6 +145,30 @@ echo "</select>";
 
                                 <?php ?>
                             </td>
+                             <td class="colhead2">
+
+
+
+                    <?php
+          
+echo "<select  id='mySelect' name='SkillSel'>";
+     echo "<option value=''></option>";
+    $sql = "SELECT * FROM techstack";
+$result = $conn->query($sql);
+                       
+    while($row = $result->fetch_assoc()) {
+        
+        
+    echo "<option value='" . $row['skill_name'] . "'>" . $row['skill_name'] . "</option>";
+}
+echo "</select>";
+         
+         ?>
+
+                    <?php ?>
+                                
+
+                    </td>
                         </tr>
                 </table>
                 <!-- another row-->
