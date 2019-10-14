@@ -54,15 +54,30 @@ $result = $conn->query($sql);
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <a class="text">
-        <div class="well1">
+       <div class="col-sm-2 sidenav">
+      <a class="text" href="Enrollments.php">
+        <div class="well1" >
      <p class="t2">Course Tech Stack</p>
       </div>
        </a> 
         <a class="text" href="Enrollments_comp.php">
                     <div class="well2">
                         <p class="t2">Company Tiers </p>
+                    </div>
+                </a>
+         <a class="text" href="Enrollments_courses.php" >
+                    <div class="well2">
+                        <p class="t2">Courses</p>
+                    </div>
+                </a>
+         <a class="text"  href="Enrollments_course_type.php">
+                    <div class="well2" >
+                        <p class="t2">Course type</p>
+                    </div>
+                </a>
+         <a class="text" href="Enrollments_schools.php" >
+                    <div class="well2" >
+                        <p class="t2">Schools</p>
                     </div>
                 </a>
         

@@ -61,21 +61,21 @@ $result = $conn->query($sql);
       </div>
        </a> 
         <a class="text" href="Enrollments_comp.php">
-                    <div class="well1">
+                    <div class="well2">
                         <p class="t2">Company Tiers </p>
                     </div>
                 </a>
-         <a class="text" href="Enrollments_course_type.php" >
-                    <div class="well2" >
+        <a class="text" href="Enrollments_courses.php">
+                    <div class="well1" >
                         <p class="t2">Courses</p>
                     </div>
                 </a>
-         <a class="text" href="Enrollments_course_type.php" >
+         <a class="text" href="Enrollments_course_type.php">
                     <div class="well2" >
                         <p class="t2">Course type</p>
                     </div>
                 </a>
-         <a class="text"  href="Enrollments_schools.php">
+         <a class="text" href="Enrollments_schools.php">
                     <div class="well2" >
                         <p class="t2">Schools</p>
                     </div>
@@ -83,24 +83,20 @@ $result = $conn->query($sql);
         
     </div>
     <div class="col-sm-10 text-left content"> 
-   <h1>Tiers</h1>
        <table id="myTable" style="width:100%">
                     <tr class="rowhead">
-                        <th class="colhead">Tier Rate</th>
-
-                        <th class="colhead">Minimum Value</th>
-                        <th class="colhead">Maximum Value</th>
-                       
-                         
+                        <th class="colhead">Course Name</th>
+<th class="colhead">School</th>
+ <th class="colhead">Course Type</th>                      
                         <th class="colhead"></th>
                     </tr>
 
 
 
 
-                    <?php 
+                  <?php 
     
-    $sql = "SELECT companyTier,companyMinimumRate,companyMaximumRate FROM companytierrate";
+    $sql = "SELECT *FROM courses";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         
@@ -110,30 +106,24 @@ $result = $conn->query($sql);
 
 
 
-                    <tr>
-                         <form action="Enrollment_comp_ap.php" method=post>
-                        <td><?php echo $row["companyTier"];?>
+                    <tr  class="info-row">
+                        <td class="colhead1"><?php echo $row["courseName"];?>
                         </td>
-                        <td>
-                            
-                            <input  name="CompNewMin" type="number"value= "<?php echo $row["companyMinimumRate"];?>" ></td>
-                            
-                            
-                        <td>
-                              <input  name="CompNewMax" type="number"value= "<?php echo $row["companyMaximumRate"];?>" ></td>
-                           
-                           
+                        <td class="colhead1">
+                            <?php echo $row["schoolName"];?></td>
+                        <td class="colhead1">
+                            <?php echo $row["courseType"];?></td>
                         
 
                         <td>
-                           
-                                <input type="hidden" name="CompTier" value="<?php echo $row["companyTier"];?>">
-                              
-                                <input type="submit"  alt="submit" fill="orange" value="Edit" width="20" height="20">
+                            <form action="Companies_details_ap.php" method=post>
+                                <input type="hidden" name="CompName" value="<?php echo $row["company_name"];?>">
+                                <input type="hidden" name="CompId" value="<?php echo $row["company_id"];?>">
+                                <input type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="17" height="17">
 
-                           
+                            </form>
                         </td>
-</form>
+
                     </tr>
 
 
@@ -141,25 +131,61 @@ $result = $conn->query($sql);
 
                     <?php } ?>
 
+           <tr>
+           <td>
+               <h4>Add a new course</h4>
+               <form action="Enrollments_add_course_ap.php" method=post>
+                               <p>course name</p>
+                                <input type="Text" name="NewCourse" >
+                   <p>school name</p>
+                    <?php
+          
+echo "<select  id='mySelect' name='SchoolName'>";
+    
+    $sql = "SELECT * FROM schools";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        
+        
+    echo "<option value='" . $row['schoolName'] . "'>" . $row['schoolName'] . "</option>";
+}
+echo "</select>";
+         
+         ?>
+                   
+                   
+                   
+                   
+                    <p>course type</p>
+                     <?php
+          
+echo "<select  id='mySelect' name='CourseType'>";
+    
+    $sql = "SELECT * FROM coursetypes";
+$result = $conn->query($sql);
+    while($row = $result->fetch_assoc()) {
+        
+        
+    echo "<option value='" . $row['courseType'] . "'>" . $row['courseType'] . "</option>";
+}
+echo "</select>";
+         
+         ?>
+                   <br>
+                                <input type="submit" alt="submit" fill="orange" value="add new course" width="20" height="20">
 
-                </table>    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+                            </form>
+               
+               </td>
+                <td>
+                
+               </td>
+               
+           
+           
+           </tr>
+
+                </table>
     </div>
     
   </div>
