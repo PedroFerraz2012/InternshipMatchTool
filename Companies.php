@@ -3,7 +3,7 @@ if (session_id() == '' || !isset($_SESSION)) {
 
 session_start();
    
-    $servername = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "internshipdatabase";
@@ -11,7 +11,7 @@ $dbname = "internshipdatabase";
     $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
     $test=false;
-        $numberOfItems1= 0;
+    $numberOfItems1= 0;
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -30,10 +30,7 @@ $result = $conn->query($sql);
     echo "0 results";
 }
 
-    
-
-
-
+  
 
 ?>
 
@@ -91,7 +88,7 @@ $result = $conn->query($sql);
 
                     <?php 
     
-    $sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes,TypeOfCompany FROM company";
+$sql = "SELECT company_id,company_name,contact_person,website,description,tier_rate,notes,TypeOfCompany FROM company";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         
@@ -128,22 +125,17 @@ $result = $conn->query($sql);
                     </tr>
 
 
-
-
                     <?php 
     
-    $sql = "SELECT * FROM company";
+$sql = "SELECT * FROM company";
 $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         
             
          ?>
 
-
-
-
                     <tr  class="info-row">
-                        <td class="colhead1"><?php echo $row["company_name"];?>
+                        <td class="colhead1"><b><?php echo $row["company_name"];?></b>
                         </td>
                         <td class="colhead1">
                             <?php echo $row["contact_person"];?></td>
@@ -172,16 +164,16 @@ $result = $conn->query($sql);
                         </td>
                         <td>
                             
-                            <form action="Companies _drop.php" method=post>
+                            <form action="Companies_drop.php" method=post>
                                 <input type="hidden" name="company_name" value="<?php echo $row["company_name"];?>">
                                 <input type="hidden" name="contact_person" value="<?php echo $row["contact_person"];?>">
                                 <input type="hidden" name="website" value="<?php echo $row["website"];?>">
                                 <input type="hidden" name="description" value="<?php echo $row["description"];?>">
-                                  <input type="hidden" name="tier_rate" value="<?php echo $row["tier_rate"];?>">
+                                <input type="hidden" name="tier_rate" value="<?php echo $row["tier_rate"];?>">
                                 <input type="hidden" name="notes" value="<?php echo $row["notes"];?>">
                                 <input type="hidden" name="TypeOfCompany" value="<?php echo $row["TypeOfCompany"];?>">
                                 <input type="hidden" name="Focus" value="<?php echo $row["Focus"];?>">
-                                <input type="submit" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="delete" width="17" height="17">
+                                <input type="image" src=".\images\trash.svg" alt="submit" value="delete" width="17" height="17">
 
                             </form>
                                 

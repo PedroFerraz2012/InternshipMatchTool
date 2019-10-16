@@ -141,7 +141,7 @@ $result = $conn->query($sql);
                                 <input type="hidden" name="stuId" value="<?php echo $row["s_id"];?>">
 
 
-                               <input type="submit" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="delete" width="17" height="17">
+                               <input type="image" src=".\images\trash.svg" alt="submit" value="delete" width="17" height="17">
 
 
                             </form>

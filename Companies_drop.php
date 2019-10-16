@@ -1,4 +1,3 @@
-
  <?php
 
 
@@ -12,7 +11,7 @@
 
 
 session_start();
-    $servername = "localhost";
+$servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "internshipdatabase";
@@ -37,25 +36,18 @@ $test= false;
    
     
     $company_name= $_POST["company_name"];   
-         $contact_person= $_POST["contact_person"];  
-         $website= $_POST["website"];  
-         $description= $_POST["description"];
+        $contact_person= $_POST["contact_person"];  
+        $website= $_POST["website"];  
+        $description= $_POST["description"];
         $tier_rate= $_POST["tier_rate"];   
-         $notes= $_POST["notes"];  
-         $TypeOfCompany= $_POST["TypeOfCompany"];  
-         $Focus= $_POST["Focus"];  
+        $notes= $_POST["notes"];  
+        $TypeOfCompany= $_POST["TypeOfCompany"];  
+        $Focus= $_POST["Focus"];  
 
 
-    
- 
-    
-
-   
-        
-       
         
     
-           try{ $sql ="DELETE FROM company WHERE company_name='".$company_name."';" ;
+    try{ $sql ="DELETE FROM company WHERE company_name='".$company_name."';" ;
     // use exec() because no results are returned
     
                
@@ -64,12 +56,7 @@ if ($conn->query($sql) === TRUE) {
     echo "updated";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-}  
-               
-               
-               
-               
-               
+}   
                
  echo "updated";
     }
@@ -82,35 +69,6 @@ catch(PDOException $e)
 }
 header('Location: Companies.php');
 $conn->close();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ?> 
