@@ -5,7 +5,10 @@ body{
     
     font-size: 14px;
 }
-
+.Image_btn{
+    background-color: transparent;
+    border: none;
+}
 
 /*
 trying to change border color from a row, when btn is hover

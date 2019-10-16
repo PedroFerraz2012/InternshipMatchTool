@@ -40,14 +40,32 @@ $result = $conn->query($sql);
 <html lang="en">
 
     <head>
-        <title>Internship Match Tool</title>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
         <link rel="shortcut icon" href="AIT_icon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="Styles.css">
+
+        <!--FullCalendar css-->
+        <link href='Calendar/css/core/main.min.css' rel='stylesheet' />
+        <link href='Calendar/css/daygrid/main.min.css' rel='stylesheet' />
+
+        <!-- my css for calendar-->
+        <link rel="stylesheet" href="Calendar/css/custom.css">
+
+        <!--FullCalendar js-->
+        <script src='./Calendar/js/core/main.min.js'></script>
+        <script src='./Calendar/js/interaction/main.min.js'></script>
+        <script src='./Calendar/js/daygrid/main.min.js'></script>
+        <script src='./Calendar/js/core/locales/en-au.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+        <!-- js bootstrap for modal-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="./Calendar/js/custom.js"></script>
     </head>
 
 
@@ -135,7 +153,8 @@ $result = $conn->query($sql);
          ?>
 
                     <tr  class="info-row">
-                        <td class="colhead1"><b><?php echo $row["company_name"];?></b>
+                        <td class="colhead1">
+                            <b><?php echo $row["company_name"];?></b>
                         </td>
                         <td class="colhead1">
                             <?php echo $row["contact_person"];?></td>
@@ -157,39 +176,69 @@ $result = $conn->query($sql);
                                 <input type="hidden" name="CompName" value="<?php echo $row["company_name"];?>">
                                 <input type="hidden" name="CompId" value="<?php echo $row["company_id"];?>">
                                 <input type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="17" height="17">
-
                             </form>
                            
                                 
                         </td>
                         <td>
                             
-                            <form action="Companies_drop.php" method=post>
+                            <form action="Companies_drop.php" method="POST">
                                 <input type="hidden" name="company_name" value="<?php echo $row["company_name"];?>">
-                                <input type="hidden" name="contact_person" value="<?php echo $row["contact_person"];?>">
-                                <input type="hidden" name="website" value="<?php echo $row["website"];?>">
-                                <input type="hidden" name="description" value="<?php echo $row["description"];?>">
-                                <input type="hidden" name="tier_rate" value="<?php echo $row["tier_rate"];?>">
-                                <input type="hidden" name="notes" value="<?php echo $row["notes"];?>">
-                                <input type="hidden" name="TypeOfCompany" value="<?php echo $row["TypeOfCompany"];?>">
-                                <input type="hidden" name="Focus" value="<?php echo $row["Focus"];?>">
-                                <input type="image" src=".\images\trash.svg" alt="submit" value="delete" width="17" height="17">
+                                <button type="button" class="Image_btn" data-toggle="modal" data-target="#myModalDelete"><img src=".\images\trash.svg" width="17" height="17"></button>
+                                <!--input type="image" src=".\images\trash.svg" alt="submit" value="delete" width="17" height="17"  data-target="#myModal"-->
 
+
+<!--MODAL DELETE CONFIRMATION-->
+<div class="modal" tabindex="-1" role="dialog" id="myModalDelete">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">DELETE <?php echo $row["company_name"];?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to delete this company?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" alt="submit" value="Delete">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script> 
+    $(document).ready(
+    function() {
+         $(".Image_btn").click(    
+             function(e) {
+             var parent_div = $(this).closes("td");
+             var val =   $(parent_div).find("company_name").val();
+             $(".modal_body").html(val );
+              $("#myModalDelete").modal();
+          });
+    } ); 
+
+});
+
+    </script>
                             </form>
+                            <?php } ?>
                                 
                         </td>
-
                     </tr>
-
-
-
-
-                    <?php } ?>
-
-
                 </table>
             </div>
         </div>
+
+
+
+
+
+
+        
 
         <footer id="sticky-footer" class="footer12">
             <div class="container text-center">
