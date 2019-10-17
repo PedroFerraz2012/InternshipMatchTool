@@ -175,25 +175,23 @@ $result = $conn->query($sql);
                             <form action="Companies_details_ap.php" method=post>
                                 <input type="hidden" name="CompName" value="<?php echo $row["company_name"];?>">
                                 <input type="hidden" name="CompId" value="<?php echo $row["company_id"];?>">
-                                <input type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="17" height="17">
+                                <input  class="Image_btn" type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="17" height="17">
                             </form>
                            
                                 
                         </td>
                         <td>
+                            <form action="Companies_drop.php" method=post>
+                            <button class="Image_btn" type="button" data-toggle="modal" data-target="#myModalDelete-<?php echo $row["company_name"];?>"><img src=".\images\trash.svg" width="17" height="17"></button>
                             
-                            <form action="Companies_drop.php" method="POST">
-                                <input type="hidden" name="company_name" value="<?php echo $row["company_name"];?>">
-                                <button type="button" class="Image_btn" data-toggle="modal" data-target="#myModalDelete"><img src=".\images\trash.svg" width="17" height="17"></button>
-                                <!--input type="image" src=".\images\trash.svg" alt="submit" value="delete" width="17" height="17"  data-target="#myModal"-->
-
 
 <!--MODAL DELETE CONFIRMATION-->
-<div class="modal" tabindex="-1" role="dialog" id="myModalDelete">
+<div class="modal" role="dialog" id="myModalDelete-<?php echo $row["company_name"];?>">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">DELETE <?php echo $row["company_name"];?></h5>
+        <h5 class="modal-title">DELETE <?php echo $row['company_name'];?>
+        <input type="hidden" name="company_name" value="<?php echo $row["company_name"];?>"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -203,28 +201,14 @@ $result = $conn->query($sql);
         </p>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-primary" alt="submit" value="Delete">
+        
+        <input class="Image_btn" type="submit" alt="submit" width="17" height="17" value="Delete">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
 </div>
-<script> 
-    $(document).ready(
-    function() {
-         $(".Image_btn").click(    
-             function(e) {
-             var parent_div = $(this).closes("td");
-             var val =   $(parent_div).find("company_name").val();
-             $(".modal_body").html(val );
-              $("#myModalDelete").modal();
-          });
-    } ); 
-
-});
-
-    </script>
-                            </form>
+                            
                             <?php } ?>
                                 
                         </td>

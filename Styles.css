@@ -8,6 +8,9 @@ body{
 .Image_btn{
     background-color: transparent;
     border: none;
+    
+    align-content: center;
+    vertical-align: middle;
 }
 
 /*

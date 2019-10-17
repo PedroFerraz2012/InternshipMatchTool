@@ -1,15 +1,6 @@
  <?php
 
 
-
-
-
-
-             
-
-
-
-
 session_start();
 $servername = "localhost";
 $username = "root";
@@ -25,17 +16,14 @@ if ($conn->connect_error) {
 }
 
 
-
-
 $test= false; 
 
-    
     
     if( $test==false){
         echo "flase";
    
-    
-    $company_name= $_POST["company_name"];   
+        //$company_name = filter_input(INPUT_GET, "company_name", FILTER_DEFAULT);
+        $company_name= $_POST["company_name"];   
         $contact_person= $_POST["contact_person"];  
         $website= $_POST["website"];  
         $description= $_POST["description"];
