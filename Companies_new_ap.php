@@ -51,22 +51,17 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }  
-               
-               
-               
-               
-               
-               
+
  echo "New record created successfully";
     }
 catch(PDOException $e)
     {
     echo $sql . "<br>" . $e->getMessage();
     }
-     $_SESSION["messageReg12"] ="added";
+     $_SESSION["messageReg12"] ='<div class="alert alert-success" role="alert">Added to the list</div>';
             echo $_SESSION["messageReg12"];    
 }
-header('Location: Companies_new.php');
+header('Location: Companies.php');
 $conn->close();
 ?> 
 

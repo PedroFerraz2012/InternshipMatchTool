@@ -133,7 +133,7 @@ echo "</select>";
 echo "<select class='select_new_add' name='CompanyType'>";
     
     $sql = "SELECT  DISTINCT(courseType) FROM courses";
-$result = $conn->query($sql);
+    $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         
         
@@ -175,7 +175,7 @@ echo "</select>";
                 <h6>Notes</h6>
                 <textarea id="t3_notes" type="text" name="Notes" Placeholder="Notes"></textarea>
                 <br><br>
-                <input type="submit" value="Add New Company">
+                <button class="btn btn-warning" type="submit" value="">Add New Company <img src=images/plus.svg></button>
                 <br><br>
                 </form>
                 <?php

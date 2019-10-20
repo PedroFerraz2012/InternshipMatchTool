@@ -129,16 +129,28 @@ $result = $conn->query($sql);
                     <option value="5">Tier 5</option>
                 </select>
 
+                <?php
+        if(isset($_SESSION['messageReg12'])){
+           echo $_SESSION["messageReg12"];
+           $_SESSION['time']=time();
+        }
+        if(time() > 1){
+            session_unset();
+            session_destroy();
+        }
+        
+        ?>
+
                 <table id="myTable" style="width:100%">
                     <tr class="rowhead">
                         <th class="colhead">Company Name</th>
                         <th class="colhead">Contact Person</th>
-                        <th class="colhead">website</th>
+                        <th class="colhead">Website</th>
                         <th class="colhead">Description</th>
                         <th class="colhead">Tier rate</th>
-                        <th class="colhead">notes</th>
-                        <th class="colhead">company type</th>
-                        <th class="colhead"> focus</th>
+                        <th class="colhead">Notes</th>
+                        <th class="colhead">Company type</th>
+                        <th class="colhead">Focus</th>
                         <th class="colhead"></th>
                     </tr>
 
@@ -177,8 +189,6 @@ $result = $conn->query($sql);
                                 <input type="hidden" name="CompId" value="<?php echo $row["company_id"];?>">
                                 <input  class="Image_btn" type="image" src=".\images\info-circle-solid.svg" alt="submit" fill="orange" value="More details" width="17" height="17">
                             </form>
-                           
-                                
                         </td>
                         <td>
                             <form action="Companies_drop.php" method=post>
@@ -208,7 +218,7 @@ $result = $conn->query($sql);
     </div>
   </div>
 </div>
-                            
+                           </form> 
                             <?php } ?>
                                 
                         </td>
